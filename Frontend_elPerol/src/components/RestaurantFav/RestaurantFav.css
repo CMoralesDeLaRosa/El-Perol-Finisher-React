@@ -1,0 +1,66 @@
+/*Restaurant-simple-fav*/
+.article-restaurant-simple-fav {
+  width: 150px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  justify-items: start;
+  align-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: var(--ep-br);
+  cursor: pointer;
+  margin-right: 45px;
+  transition: transform 0.3s ease-in-out;
+}
+.article-restaurant-simple-fav:hover {
+  transform: scale(1.05);
+}
+.article-restaurant-simple-fav > img {
+  height: 120px;
+  width: 100%;
+  border-radius: var(--ep-br);
+  object-fit: cover;
+}
+.article-restaurant-simple-fav > h3 {
+  width: 100%;
+  line-height: 1.3;
+  text-align: center;
+  color: var(--ep-third-text);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 400;
+}
+.article-restaurant-simple-fav.myOwnRestaurant {
+  width: 150px;
+  height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  justify-items: start;
+  align-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: var(--ep-br);
+  cursor: pointer;
+  margin-right: 45px;
+  transition: transform 0.3s ease-in-out;
+  border: 1px solid white;
+}
+.article-restaurant-simple-fav.myOwnRestaurant > h3 {
+  width: 100%;
+  line-height: 1.3;
+  text-align: center;
+  color: var(--ep-second-text);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 400;
+}
+@media (max-width: 580px) {
+  .article-restaurant-simple-fav {
+    margin-right: 15px;
+  }
+}

@@ -1,0 +1,63 @@
+/*Section-my-likes*/
+#section-mylikes {
+  width: 100%;
+  height: 480px;
+  display: flex;
+  justify-content: end;
+  justify-items: end;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  gap: 10px;
+  background-color: var(--ep-second-bg);
+  padding-left: var(--ep-padding-s);
+}
+.article-mylikes-counter {
+  width: 100%;
+  height: 50px;
+}
+.article-mylikes-counter > p {
+  line-height: 1.3;
+  text-align: center;
+  color: var(--ep-second-text);
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 400;
+  text-align: center;
+}
+.article-mylikes-counter > p > span {
+  line-height: 1.3;
+  text-align: center;
+  color: var(--ep-second-text);
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 600;
+}
+.article-mylikes-profile {
+  width: 100%;
+  height: 200px;
+}
+
+/*MediaQueries*/
+@media (max-width: 950px) {
+  #section-mylikes {
+    height: 450px;
+  }
+  .article-mylikes-counter > p {
+    font-size: 15px;
+  }
+}
+@media (max-width: 580px) {
+  .article-mylikes-counter > p {
+    flex-direction: column;
+    width: 250px;
+    font-size: 13px;
+    letter-spacing: 2.5px;
+  }
+  .article-mylikes-counter > p > span {
+    font-size: 15px;
+    letter-spacing: 2.5px;
+  }
+}

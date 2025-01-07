@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+#root {
+  height: 100svh;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
+}
+
+:root {
+  font-family: 'Rubik', sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+
+  /*BRANDING-COLORS*/
+  --ep-color1: #c3c3c7;
+  --ep-color2: #ffffff;
+  --ep-color3: #521a1c;
+  --ep-color4: #eab264;
+  --ep-color5: #a13b3ed5;
+  --ep-color6: #ffdcaa;
+  --ep-color7: #d52a30d5;
+  --ep-color8: #130203d5;
+
+  /*BACKGROUND COLORS*/
+  --ep-first-bg: var(--ep-color4);
+  --ep-second-bg: var(--ep-color3);
+  --ep-third-bg: var(--ep-color2);
+  --ep-forth-bg: var(--ep-color6);
+  --ep-fifth-bg: var(--ep-color5);
+
+  /*TEXT COLORS*/
+  --ep-first-text: var(--ep-color1);
+  --ep-second-text: var(--ep-color2);
+  --ep-third-text: var(--ep-color3);
+  --ep-forth-text: var(--ep-color8);
+  --ep-fifth-text: var(--ep-color4);
+  --ep-sixth-text: var(--ep-color5);
+  --ep-seventh-text: var(--ep-color6);
+
+  /*BORDER RADIUS*/
+  --ep-br: 15px;
+  --ep-br2: 20px;
+  --ep-br3: 100px;
+  --ep-br4: 200px;
+
+  /*SPACING*/
+  --ep-margin-xs: 10px;
+  --ep-margin-s: 20px;
+  --ep-margin-m: 30px;
+  --ep-margin-l: 40px;
+  --ep-margin-xl: 50px;
+  --ep-margin-section: 100px;
+
+  --ep-padding-xs: 10px;
+  --ep-padding-s: 20px;
+  --ep-padding-m: 30px;
+  --ep-padding-l: 40px;
+  --ep-padding-xl: 50px;
+  --ep-padding-section: 100px;
+}
+
+/*FLEX CONTAINER*/
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.error-message {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  z-index: 1000;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  animation: fadeOut 5s ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/*MediaQueries*/
+@media (max-width: 810px) {
+  .error-message {
+    font-size: 14px;
+  }
+}
+@media (max-width: 580px) {
+  .error-message {
+    font-size: 13px;
+  }
+}
