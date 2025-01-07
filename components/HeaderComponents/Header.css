@@ -1,0 +1,343 @@
+/*Header*/
+header {
+  position: absolute;
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  padding: 0 var(--ep-padding-section);
+  z-index: 10;
+}
+.div-header-left {
+  display: flex;
+  justify-content: start;
+  justify-items: start;
+  align-content: center;
+  align-items: center;
+  width: 400px;
+  height: 60px;
+}
+.line-left {
+  position: absolute;
+  width: 550px;
+  height: 0.8px;
+  top: 130px;
+  left: 0px;
+  background-color: var(--ep-color2);
+}
+.div-header-right {
+  display: flex;
+  justify-content: end;
+  justify-items: end;
+  align-content: center;
+  align-items: center;
+  width: 400px;
+  gap: 80px;
+  height: 60px;
+}
+.line-right {
+  position: absolute;
+  width: 550px;
+  height: 0.8px;
+  top: 130px;
+  right: 0px;
+  background-color: var(--ep-color2);
+}
+.div-header-logo {
+  width: 160px;
+  margin-top: 110px;
+}
+.div-header-logo img {
+  width: 100%;
+  cursor: pointer;
+}
+
+/*Nav-header*/
+.ul-header {
+  gap: 80px;
+}
+.link-restaurants,
+.link-recipes {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 400;
+  color: var(--ep-first-text);
+  font-size: 15px;
+}
+.link-restaurants.li-active,
+.link-recipes.li-active {
+  font-weight: 600;
+  color: var(--ep-color6);
+  font-size: 15px;
+}
+.ul-header a:hover {
+  color: var(--ep-second-text);
+}
+
+/*Nav-header-logged*/
+.nav-header-logged-left {
+  width: 300px;
+  margin-right: 150px;
+}
+.nav-header-logged-right {
+  width: 450px;
+  display: flex;
+  justify-content: end;
+  justify-items: end;
+  align-items: center;
+  align-content: center;
+}
+.ul-header-logged-left,
+.ul-header-logged-right {
+  gap: 40px;
+}
+.ul-header-logged-left a,
+.ul-header-logged-right a {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 400;
+  color: var(--ep-first-text);
+  font-size: 15px;
+}
+.ul-header-logged-left a.active,
+.ul-header-logged-right a.active {
+  font-weight: 600;
+  color: var(--ep-color6);
+  font-size: 15px;
+}
+.ul-header-logged-left a:hover,
+.ul-header-logged-right a:hover {
+  color: var(--ep-second-text);
+  text-decoration: underline;
+}
+.mobile-menu {
+  display: none;
+}
+.mobile-menu-icon {
+  display: none;
+}
+
+/*MediaQueries*/
+@media (max-width: 1300px) {
+  .div-header-logo {
+    width: 150px;
+  }
+  .line-left,
+  .line-right {
+    width: 450px;
+  }
+  .div-header-left {
+    width: 300px;
+  }
+  .ul-header {
+    gap: 50px;
+  }
+  .div-header-right {
+    width: 300px;
+    gap: 50px;
+  }
+}
+@media (max-width: 1180px) {
+  header {
+    padding: 0 var(--ep-padding-xl);
+  }
+  .line-left,
+  .line-right {
+    width: 380px;
+  }
+  .ul-header-logged-left,
+  .ul-header-logged-right {
+    gap: 30px;
+  }
+}
+@media (max-width: 1045px) {
+  .ul-header-logged-left a,
+  .ul-header-logged-right a {
+    letter-spacing: 2px;
+    font-size: 13px;
+  }
+  .ul-header-logged-left,
+  .ul-header-logged-right {
+    gap: 20px;
+  }
+}
+@media (max-width: 980px) {
+  .div-header-left {
+    width: 250px;
+  }
+  .ul-header {
+    gap: 30px;
+  }
+  .div-header-right {
+    width: 250px;
+    gap: 30px;
+  }
+  .link-restaurants,
+  .link-recipes {
+    font-size: 13px;
+  }
+
+  .link-restaurants.li-active,
+  .link-recipes.li-active {
+    font-weight: 600;
+    color: var(--ep-color6);
+    font-size: 13px;
+  }
+}
+@media (max-width: 950px) {
+  header {
+    position: absolute;
+    width: 100%;
+    height: 80px;
+  }
+  .div-header-left,
+  .div-header-right {
+    display: none;
+  }
+  .nav-header-logged-left {
+    display: none;
+  }
+  .nav-header-logged-right {
+    display: none;
+  }
+  .mobile-menu-icon {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    top: 20px;
+    right: 50px;
+    font-size: 40px;
+    padding: 10px;
+    color: var(--ep-color2);
+    transition: transform 0.5s ease;
+  }
+  .mobile-menu-icon:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+  }
+  .mobile-menu-icon:active {
+    transform: scale(0.95);
+  }
+  .mobile-menu ul {
+    flex-direction: column;
+    height: 100%;
+    gap: 20px;
+  }
+  .mobile-menu a {
+    cursor: pointer;
+    text-transform: uppercase;
+    color: var(--ep-second-text);
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+  .mobile-menu a:hover {
+    font-weight: 600;
+  }
+  .mobile-menu.visible {
+    display: flex;
+    flex-direction: column;
+    transform: translateY(0);
+    opacity: 1;
+    position: absolute;
+    right: 65px;
+    top: 100px;
+    width: 160px;
+    height: 170px;
+    z-index: 20;
+    background-color: var(--ep-fifth-bg);
+    border-radius: var(--ep-br);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .mobile-menu:not(.visible) {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 65px;
+    top: 100px;
+    width: 160px;
+    height: 170px;
+    z-index: 10;
+    transform: translateY(-20px);
+    opacity: 0;
+    pointer-events: none;
+    background-color: var(--ep-fifth-bg);
+    border-radius: var(--ep-br);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  .line-left,
+  .line-right {
+    width: 320px;
+    top: 90px;
+  }
+  .div-header-logo {
+    width: 150px;
+    margin: auto;
+    margin-top: 38px;
+  }
+}
+@media (max-width: 810px) {
+  .line-left,
+  .line-right {
+    width: 250px;
+  }
+
+  .mobile-menu a {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+  }
+
+  .mobile-menu.visible {
+    width: 140px;
+    height: 170px;
+  }
+
+  .mobile-menu:not(.visible) {
+    width: 140px;
+    height: 170px;
+  }
+}
+@media (max-width: 665px) {
+  .line-left,
+  .line-right {
+    width: 200px;
+  }
+  .div-header-logo {
+    width: 100px;
+    margin: auto;
+    margin-top: 56px;
+  }
+
+  .mobile-menu.visible {
+    height: 160px;
+    top: 105px;
+  }
+
+  .mobile-menu:not(.visible) {
+    height: 160px;
+    top: 105px;
+  }
+}
+@media (max-width: 580px) {
+  .line-left,
+  .line-right {
+    width: 120px;
+  }
+  .mobile-menu-icon {
+    top: 20px;
+    right: 25px;
+  }
+  .mobile-menu.visible {
+    height: 170px;
+
+    right: 25px;
+  }
+
+  .mobile-menu:not(.visible) {
+    height: 170px;
+    right: 25px;
+  }
+}

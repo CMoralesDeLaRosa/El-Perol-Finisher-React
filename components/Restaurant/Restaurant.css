@@ -1,0 +1,199 @@
+/*Restaurant-simple*/
+.article-restaurant-simple {
+  width: 367px;
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+  border-radius: var(--ep-br);
+  cursor: pointer;
+  transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+}
+.article-restaurant-simple > div {
+  height: 350px;
+  width: 360px;
+  border-radius: var(--ep-br);
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.article-restaurant-simple > div > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 1s ease-in;
+  filter: brightness(0.7);
+}
+.article-restaurant-simple:hover img {
+  transform: scale(1.4);
+  filter: brightness(0.4);
+}
+.article-restaurant-simple h3 {
+  font-size: 17px;
+  width: 360px;
+}
+.article-restaurant-simple:hover h3 {
+  font-size: 18px;
+  transform: translateY(-240px);
+  color: var(--ep-second-text);
+  transition: all 1s ease-in;
+  width: 360px;
+}
+.restaurant-address {
+  font-size: 16px;
+  color: var(--ep-color2);
+  opacity: 0;
+  transition: opacity 0.5s ease-in, transform 0.5s ease-in;
+  line-height: 20px;
+  width: 200px;
+  text-align: center;
+}
+.restaurant-schedule {
+  font-size: 15px;
+  color: var(--ep-color2);
+  opacity: 0;
+  transition: opacity 0.5s ease-in, transform 0.5s ease-in;
+}
+.article-restaurant-simple:hover .restaurant-address {
+  opacity: 1;
+  transform: translateY(-180px);
+  transition-delay: 0.7s;
+}
+.article-restaurant-simple:hover .restaurant-schedule {
+  opacity: 1;
+  transform: translateY(-180px);
+  transition-delay: 0.7s;
+}
+.light-text-restaurant {
+  position: absolute;
+  margin-top: 380px;
+  width: 240px;
+  line-height: 1.3;
+  text-align: center;
+  color: var(--ep-first-text);
+  font-size: 17px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 400;
+  transition: all 1s ease-in;
+}
+.dark-text-restaurant {
+  position: absolute;
+  margin-top: 380px;
+  width: 240px;
+  line-height: 1.3;
+  text-align: center;
+  color: #e6b775;
+  font-size: 17px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 400;
+  transition: all 1s ease-in;
+}
+.div-likes-restaurant {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  opacity: 0; /* Inicialmente invisible */
+  z-index: 1; /* Está por debajo del contenido principal */
+  transition: opacity 1s ease-in;
+}
+.div-likes-restaurant > h4 {
+  font-weight: 100;
+  font-style: normal;
+  text-align: center;
+  font-size: 15px;
+  letter-spacing: 0.8px;
+  color: var(--ep-second-text);
+}
+
+.article-restaurant-simple:hover .div-likes-restaurant {
+  opacity: 1;
+  z-index: 2;
+  transition-delay: 1s;
+}
+.icon-like-restaurant {
+  width: 25px;
+  height: 25px;
+  color: #ea2027;
+}
+
+/*MediaQueries*/
+@media (max-width: 1100px) {
+  .article-restaurant-simple {
+    width: 280px;
+    height: 380px;
+    gap: 10px;
+  }
+  .article-restaurant-simple > div {
+    height: 280px;
+    width: 290px;
+  }
+
+  .article-restaurant-simple h3 {
+    font-size: 15px;
+    width: 290px;
+  }
+  .light-text-restaurant,
+  .dark-text-restaurant {
+    margin-top: 300px;
+    max-width: 260px;
+    font-size: 80px;
+    letter-spacing: 2.5px;
+  }
+}
+@media (max-width: 910px) {
+  .article-restaurant-simple {
+    width: 250px;
+    height: 330px;
+    gap: 10px;
+  }
+  .article-restaurant-simple > div {
+    height: 250px;
+    width: 260px;
+  }
+
+  .article-restaurant-simple h3 {
+    font-size: 15px;
+    width: 260px;
+  }
+  .light-text-restaurant,
+  .dark-text-restaurant {
+    margin-top: 270px;
+    max-width: 230px;
+    font-size: 80px;
+    letter-spacing: 2.5px;
+  }
+}
+
+@media (max-width: 530px) {
+  .article-restaurant-simple {
+    width: 200px;
+    height: 280px;
+    gap: 10px;
+  }
+  .article-restaurant-simple > div {
+    height: 200px;
+    width: 210px;
+  }
+
+  .article-restaurant-simple h3 {
+    font-size: 15px;
+    width: 210px;
+  }
+  .light-text-restaurant,
+  .dark-text-restaurant {
+    margin-top: 220px;
+    max-width: 180px;
+    font-size: 80px;
+    letter-spacing: 2.5px;
+  }
+}

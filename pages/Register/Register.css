@@ -1,0 +1,66 @@
+/*Section-register*/
+#section-register {
+  position: relative;
+  width: 100%;
+  height: 1000px;
+  padding-bottom: 200px;
+  background-color: var(--ep-second-bg);
+  display: flex;
+  flex-direction: column;
+}
+.article-form-register {
+  width: 100%;
+  height: 100%;
+  gap: 50px;
+  margin-top: 250px;
+  margin-bottom: 100px;
+}
+
+#user,
+#restaurant {
+  margin: 0;
+}
+
+/*MediaQueries*/
+@media (max-width: 1100px) {
+  .article-form-register > form {
+    width: 380px;
+    height: 590px;
+  }
+}
+@media (max-width: 950px) {
+  #section-register {
+    height: auto;
+    padding-bottom: var(--ep-padding-xl);
+    background-color: var(--ep-second-bg);
+  }
+  .article-form-register {
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap: 50px;
+    margin-top: 200px;
+    margin-bottom: var(--ep-margin-xl);
+  }
+}
+@media (max-width: 721px) {
+  .article-form-register > #user,
+  .article-form-register > #restaurant {
+    width: 280px;
+    height: 610px;
+  }
+
+  .article-form-register > #user > .div-form-title > p,
+  .article-form-register > #restaurant > .div-form-title > p {
+    width: 250px;
+  }
+
+  .article-form-register > #user > .div-form-inputs > input,
+  .article-form-register > #restaurant > .div-form-inputs > input {
+    width: 220px;
+  }
+  .article-form-register > #user > .div-form-inputs > .input-error,
+  .article-form-register > #restaurant > .div-form-inputs > .input-error {
+    width: 250px;
+  }
+}

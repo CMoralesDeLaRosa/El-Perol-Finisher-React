@@ -1,0 +1,476 @@
+/*Section-restaurant-details*/
+#section-restaurant-details {
+  width: 100%;
+  background-color: var(--ep-fifth-bg);
+  display: flex;
+  flex-direction: column;
+}
+.article-restaurant-details {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 30px 120px 100px 120px;
+  gap: 20px;
+  padding-top: 250px;
+  height: auto;
+  align-content: flex-start;
+}
+.article-restaurant-img {
+  height: 500px;
+  width: 300px;
+  border-radius: 0 var(--ep-br3) 0 0;
+}
+.article-restaurant-img > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 0 var(--ep-br3) 0 0;
+  filter: brightness(0.6);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.article-restaurant-main-details {
+  height: 500px;
+  width: 850px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.div-restaurant-details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  align-content: end;
+  justify-content: start;
+  justify-items: start;
+  gap: 10px;
+  padding: var(--ep-padding-m) var(--ep-padding-xl);
+  border-radius: var(--ep-br2);
+  background-color: var(--ep-first-bg);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.div-restaurant-details > h2 {
+  position: relative;
+  text-align: start;
+  font-family: 'Lora', serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 35px;
+  color: var(--ep-third-text);
+  letter-spacing: 2px;
+  width: 100%;
+  text-align: end;
+}
+.p-address-restaurant {
+  font-weight: 600;
+  font-style: normal;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  color: var(--ep-third-text);
+  text-align: start;
+  width: 100%;
+  text-align: end;
+}
+.p-schedule-restaurant {
+  font-size: 18px;
+  text-align: end;
+  color: var(--ep-third-text);
+  letter-spacing: 0.5px;
+  line-height: 28px;
+  font-weight: 400;
+  width: 100%;
+}
+.div-restaurant-recipes {
+  width: 100%;
+  height: 300px;
+  gap: 20px;
+  border: 1px solid var(--ep-color2);
+  border-radius: var(--ep-br);
+  padding: var(--ep-padding-l);
+}
+.div-restaurant-recipes h3 {
+  font-weight: 400;
+  font-style: normal;
+  text-align: end;
+  text-transform: uppercase;
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: var(--ep-second-text);
+  width: 100%;
+}
+.recipes-created-container-restaurant {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-content: start;
+  align-items: start;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: var(--ep-padding-l) var(--ep-padding-m);
+  overflow-y: auto;
+  border-radius: var(--ep-br);
+}
+.recipes-created-container-restaurant::-webkit-scrollbar {
+  width: 10px;
+}
+.recipes-created-container-restaurant::-webkit-scrollbar-thumb {
+  background-color: var(--ep-color2);
+  border-radius: 4px;
+}
+.recipes-created-container-restaurant::-webkit-scrollbar-track {
+  background-color: var(--ep-color5);
+  border-radius: 4px;
+}
+
+.recipe-item-container-restaurant {
+  position: relative;
+  height: 180px;
+  flex-direction: column;
+  padding: var(--ep-padding-xs);
+  background-color: var(--ep-fifth-bg);
+  border-radius: var(--ep-br);
+  margin-right: 30px;
+}
+.div-container-no-recipes-restaurant {
+  width: 100%;
+  gap: 10px;
+}
+.div-container-no-recipes-restaurant > p {
+  color: var(--ep-second-text);
+}
+.edit-icon-alert-recipes-restaurants {
+  color: var(--ep-color2);
+  height: 20px;
+  width: 20px;
+}
+.div-likes-restaurant-details {
+  position: absolute;
+  width: 100px;
+  height: 30px;
+  bottom: 75px;
+  left: 130px;
+  display: flex;
+  justify-content: start;
+  justify-items: start;
+  align-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.div-likes-restaurant-details > h4 {
+  font-weight: 200;
+  font-style: normal;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 20px;
+  letter-spacing: 0.8px;
+  color: var(--ep-second-text);
+  text-align: start;
+}
+.icon-like-restaurant-details-full {
+  width: 30px;
+  height: 30px;
+  color: #ea2027;
+  cursor: pointer;
+  margin-right: 3.5px;
+}
+.icon-like-restaurant-details-empty {
+  width: 30px;
+  height: 30px;
+  color: var(--ep-color2);
+  cursor: pointer;
+}
+.error-message-resturant-details {
+  position: absolute;
+  width: 450px;
+  top: 55px;
+  left: -10px;
+  font-size: 13px;
+  letter-spacing: 3;
+  color: var(--ep-third-text);
+  text-align: center;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.article-restaurant-phrases {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding: var(--ep-padding-m) var(--ep-padding-section);
+}
+.div-restaurant-phrase {
+  width: 100%;
+  height: 100px;
+  border-radius: var(--ep-br2);
+  background-color: var(--ep-fifth-bg);
+  margin-bottom: var(--ep-margin-s);
+}
+.div-restaurant-phrase:first-of-type {
+  border-radius: var(--ep-br3) var(--ep-br3) 0 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.div-restaurant-phrase:last-of-type {
+  border-radius: 0 0 var(--ep-br3) var(--ep-br3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.div-restaurant-phrase > p {
+  font-size: 20px;
+  text-align: center;
+  color: var(--ep-second-text);
+  letter-spacing: 0.5px;
+  line-height: 28px;
+  font-weight: 200;
+}
+.no-recipes-created-container {
+  width: 100%;
+  height: 80%;
+  gap: 10px;
+}
+.no-recipes-created-container > p {
+  color: var(--ep-second-text);
+  letter-spacing: 0.5px;
+  line-height: 28px;
+  font-weight: 400;
+  font-size: 16px;
+}
+.icon-no-recipes-restaurant {
+  color: var(--ep-color2);
+  width: 20px;
+  height: 20px;
+}
+
+/*MediaQueries*/
+
+@media (max-width: 1410px) {
+  #section-restaurant-details {
+    width: auto;
+  }
+  .article-restaurant-main-details {
+    width: 750px;
+  }
+  .recipes-created-container-restaurant {
+    gap: 50px;
+  }
+}
+@media (max-width: 1310px) {
+  .article-restaurant-main-details {
+    width: 650px;
+  }
+  .recipes-created-container-restaurant {
+    gap: 20px;
+  }
+}
+@media (max-width: 1210px) {
+  .article-restaurant-main-details {
+    width: 540px;
+  }
+  .recipes-created-container-restaurant {
+    gap: 50px;
+  }
+}
+@media (max-width: 1100px) {
+  .article-restaurant-details {
+    flex-direction: column;
+    justify-content: start;
+    justify-items: start;
+    align-content: center;
+    align-items: center;
+    padding: 0 var(--ep--padding-xl) 0 var(--ep--padding-xl);
+    gap: 50px;
+    height: 1250px;
+  }
+  .article-restaurant-img {
+    height: 300px;
+    width: 700px;
+    border-radius: var(--ep-br2);
+    margin-top: 260px;
+  }
+  .article-restaurant-img > img {
+    border-radius: var(--ep-br2);
+  }
+  .article-restaurant-main-details {
+    height: auto;
+    width: 700px;
+    gap: 40px;
+  }
+  .div-restaurant-details {
+    width: 100%;
+    height: 180px;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+  }
+  .div-restaurant-details > h2 {
+    font-size: 30px;
+    text-align: center;
+    width: auto;
+  }
+  .div-restaurant-details > p {
+    text-align: center;
+    width: auto;
+  }
+  .div-restaurant-recipes {
+    height: 380px;
+    padding: var(--ep-padding-xl);
+    gap: 30px;
+  }
+  .div-restaurant-recipes > h3 {
+    width: 100%;
+    text-align: center;
+  }
+  .div-likes-restaurant-details {
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    bottom: 260px;
+    left: 0;
+  }
+  .recipes-created-container-restaurant {
+    gap: 30px;
+  }
+  .article-restaurant-phrases {
+    width: 100%;
+  }
+  .div-restaurant-phrase {
+    width: 700px;
+  }
+  .div-restaurant-phrase:first-of-type {
+    border-radius: var(--ep-br2) var(--ep-br2) 0 0;
+  }
+  .div-restaurant-phrase:last-of-type {
+    border-radius: 0 0 var(--ep-br2) var(--ep-br2);
+  }
+}
+@media (max-width: 810px) {
+  .article-restaurant-details {
+    gap: 40px;
+    height: 1150px;
+  }
+  .article-restaurant-img {
+    height: 300px;
+    width: 500px;
+    margin-top: 200px;
+    gap: 20px;
+  }
+  .div-likes-restaurant-details {
+    bottom: 320px;
+  }
+  .div-likes-restaurant-details > h4 {
+    font-size: 18px;
+  }
+  .icon-like-restaurant-details-full {
+    width: 25px;
+    height: 25px;
+  }
+  .icon-like-restaurant-details-empty {
+    width: 25px;
+    height: 25px;
+  }
+  .article-restaurant-main-details {
+    width: 500px;
+    gap: 30px;
+  }
+  .div-restaurant-details {
+    height: 150px;
+  }
+  .div-restaurant-details > h2 {
+    font-size: 25px;
+    letter-spacing: 1.3;
+  }
+  .p-address-restaurant {
+    font-size: 15px;
+  }
+  .p-schedule-restaurant {
+    font-size: 15px;
+    line-height: 20px;
+  }
+  .div-restaurant-recipes {
+    height: 380px;
+    padding: var(--ep-padding-xl) var(--ep-padding-m);
+    gap: 30px;
+  }
+  .recipes-created-container-restaurant {
+    gap: 30px;
+    padding: var(--ep-padding-s) 0;
+  }
+  .div-restaurant-phrase {
+    width: 500px;
+    height: 70px;
+  }
+  .div-restaurant-phrase > p {
+    font-size: 16px;
+  }
+}
+@media (max-width: 580px) {
+  .article-restaurant-details {
+    gap: 30px;
+    height: 1100px;
+  }
+  .article-restaurant-img {
+    width: 250px;
+    height: 300px;
+  }
+  .div-likes-restaurant-details > h4 {
+    font-size: 16px;
+  }
+  .icon-like-restaurant-details-full {
+    width: 23px;
+    height: 23px;
+  }
+  .icon-like-restaurant-details-empty {
+    width: 23px;
+    height: 23px;
+  }
+  .article-restaurant-main-details {
+    width: 250px;
+    gap: 30px;
+  }
+  .div-restaurant-details {
+    height: auto;
+    padding: var(--ep-padding-s) 0;
+  }
+  .div-restaurant-details > h2 {
+    font-size: 22px;
+    letter-spacing: 1.2;
+  }
+  .p-address-restaurant {
+    font-size: 13px;
+  }
+  .p-schedule-restaurant {
+    font-size: 13px;
+  }
+  .div-restaurant-recipes > h3 {
+    font-size: 16px;
+  }
+  .recipes-created-container-restaurant {
+    gap: 20px;
+    padding: var(--ep-padding-xs) 0;
+  }
+  .div-restaurant-phrase {
+    width: 250px;
+    height: auto;
+    padding: var(--ep-padding-s) var(--ep-padding-m);
+  }
+  .div-restaurant-phrase > p {
+    font-size: 14px;
+    line-height: 1.3;
+  }
+  .no-recipes-created-container > p {
+    line-height: 20px;
+    font-size: 13px;
+    text-align: center;
+  }
+  .icon-no-recipes-restaurant {
+    width: 25px;
+    height: 25px;
+  }
+}

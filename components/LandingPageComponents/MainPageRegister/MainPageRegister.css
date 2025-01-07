@@ -1,0 +1,187 @@
+/*Section-main-page-register*/
+#section-main-page-register {
+  width: 100%;
+  height: 850px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  background-color: var(--ep-first-bg);
+  transition: background-color 0.3s ease-in-out;
+}
+#section-main-page-register.scrolled {
+  background-color: var(--ep-color5);
+}
+.article-main-page-register-form {
+  height: 100%;
+  width: 50%;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-content: start;
+  align-items: start;
+  justify-content: center;
+  justify-items: center;
+  padding-left: var(--ep-padding-section);
+  margin: var(--ep-margin-l) 0;
+  gap: 50px;
+  border-radius: 0 var(--ep-br4) 0 0;
+  background-color: var(--ep-second-bg);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.article-main-page-register-form h2 {
+  width: 450px;
+  margin-left: 20px;
+  line-height: 50px;
+  text-align: left;
+  font-family: 'Lora', serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  color: var(--ep-first-text);
+  font-size: 40px;
+  letter-spacing: 2;
+}
+.article-main-page-register-img {
+  height: 100%;
+  width: 50%;
+  z-index: 0;
+}
+.article-main-page-register-img > img {
+  width: 120%;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+.div-form-main-page {
+  height: 500px;
+  margin-left: 20px;
+}
+.form-main-page {
+  height: 480px;
+  width: 420px;
+  flex-direction: column;
+  gap: 15px;
+  padding: var(--ep-padding-m);
+  margin: auto;
+  background-color: var(--ep-first-bg);
+  border-radius: var(--ep-br);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.form-main-page > .div-img-form-user {
+  display: none;
+}
+.form-main-page .div-form-inputs {
+  height: 230px;
+  margin-top: var(--ep-margin-xs);
+}
+.form-main-page .div-form-title > p {
+  font-size: 16px;
+  width: 320px;
+  text-align: center;
+  color: var(--ep-third-text);
+  letter-spacing: 0.5px;
+  line-height: 20px;
+  font-weight: 200;
+}
+
+/*MediaQueries*/
+@media (max-width: 1350px) {
+  #section-main-page-register {
+    height: 800px;
+  }
+  .article-main-page-register-form h2 {
+    width: 350px;
+    line-height: 20px;
+    font-size: 30px;
+    letter-spacing: 1.5;
+    margin-bottom: 40px;
+    margin-left: 50px;
+  }
+  .article-main-page-register-form {
+    padding-left: var(--ep-padding-xl);
+    gap: 20px;
+  }
+}
+@media (max-width: 1000px) {
+  #section-main-page-register {
+    height: auto;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    gap: 0;
+    padding-top: 80px;
+    padding-bottom: 40px;
+    margin: 0;
+  }
+  .article-main-page-register-form {
+    height: auto;
+    width: 100%;
+    padding-left: 0;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+    margin: 0;
+    gap: 40px;
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  .article-main-page-register-form h2 {
+    width: 100%;
+    margin-left: 0;
+    color: var(--ep-fifth-text);
+    text-align: center;
+  }
+
+  .article-main-page-register-img {
+    position: absolute;
+    padding-right: 0;
+    height: auto;
+    width: 100%;
+  }
+  .article-main-page-register-img > img {
+    width: 80%;
+    filter: brightness(0.5);
+  }
+}
+
+@media (max-width: 800px) {
+  .article-main-page-register-img > img {
+    width: 120%;
+  }
+}
+
+@media (max-width: 530px) {
+  #section-main-page-register {
+    height: 750px;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    gap: 0;
+    padding: var(--ep-padding-l) 0 var(--ep-padding-l) 0;
+    margin: 0;
+  }
+  #section-main-page-register h2 {
+    width: 100%;
+    text-align: center;
+    line-height: 1;
+    font-size: 27px;
+    line-height: 10px;
+    margin-bottom: var(--ep-margin-s);
+  }
+  .article-main-page-register-img > img {
+    width: 170%;
+  }
+  .article-main-page-register-form {
+    width: 100%;
+    height: 650px;
+    padding: 0;
+  }
+}
