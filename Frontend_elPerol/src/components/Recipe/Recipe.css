@@ -26,18 +26,18 @@
   height: 100%;
   border-radius: var(--ep-br);
   object-fit: cover;
-  transition: all 1s ease-in;
+  transition: all 300ms ease-in;
   filter: brightness(0.7);
 }
 .article-recipe-simple:hover img {
   transform: scale(1.4);
-  transition: all 1s ease-in;
+  transition: all 400ms ease-in;
   filter: brightness(0.4);
 }
 .article-recipe-simple:hover h3 {
   transform: translateY(-150px);
   color: var(--ep-second-text);
-  transition: all 1s ease-in;
+  transition: all 400ms ease-in;
 }
 .dark-text-recipe {
   position: absolute;
@@ -49,7 +49,7 @@
   text-align: center;
   letter-spacing: 3px;
   font-weight: 400;
-  transition: all 1s ease-in;
+  transition: all 400ms ease-in;
 }
 .light-text-recipe {
   position: absolute;
@@ -61,7 +61,7 @@
   text-align: center;
   letter-spacing: 3px;
   font-weight: 400;
-  transition: all 1s ease-in;
+  transition: all 400ms ease-in;
 }
 .div-likes-recipe {
   position: absolute;
@@ -75,12 +75,12 @@
   border-radius: 10px;
   opacity: 0;
   z-index: 1;
-  transition: opacity 1s ease-in;
+  transition: opacity 400ms ease-in;
 }
 .article-recipe-simple:hover .div-likes-recipe {
   opacity: 1;
   z-index: 2;
-  transition-delay: 1s;
+  transition-delay: 400ms;
 }
 .div-likes-recipe > h4 {
   font-weight: 100;
