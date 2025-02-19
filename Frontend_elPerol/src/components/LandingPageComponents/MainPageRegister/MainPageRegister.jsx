@@ -1,7 +1,7 @@
 import './MainPageRegister.css'
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { handleRegisterUser } from '../../../utils/handleRegisterUser'
+handleRegisterUser
 import FormRegisterUser from '../../Forms/FormRegisterUser'
 import Button from '../../Button/Button'
 import SpinnerLoading from '../../SpinnerLoading/SpinnerLoading'
