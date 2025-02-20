@@ -42,6 +42,15 @@ const FormRegisterUser = ({
         <p>{subtitle}</p>
       </div>
       <div className='div-form-inputs'>
+        <label htmlFor='imgUser' className='label-img'>
+          {formState.errors.img ? (
+            <span className='error-message'>
+              Es necesario elegir una imagen de perfil
+            </span>
+          ) : (
+            <span>Imagen de perfil</span>
+          )}
+        </label>
         <input
           {...register('img', {
             required: {
