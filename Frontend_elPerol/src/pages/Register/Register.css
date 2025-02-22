@@ -56,11 +56,25 @@
   }
 
   .article-form-register > #user > .div-form-inputs > input,
-  .article-form-register > #restaurant > .div-form-inputs > input {
+  .article-form-register > #restaurant > .div-form-inputs > input,
+  .label-register-img-user,
+  .label-register-img-restaurant,
+  .label-register-img {
     width: 220px;
   }
   .article-form-register > #user > .div-form-inputs > .input-error,
-  .article-form-register > #restaurant > .div-form-inputs > .input-error {
+  .article-form-register > #restaurant > .div-form-inputs > .input-error,
+  .label-register-img-error-user,
+  .label-register-img-error-restaurant {
     width: 250px;
+  }
+
+  .div-img-form-user {
+    width: 120px;
+    top: 420px;
+  }
+  .div-form-title > h3 {
+    width: 250px;
+    font-size: 18px;
   }
 }

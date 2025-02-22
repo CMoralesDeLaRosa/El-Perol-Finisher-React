@@ -1,7 +1,7 @@
 import './Forms.css'
 import { useForm } from 'react-hook-form'
 import Button from '../Button/Button'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { MdCameraAlt } from 'react-icons/md'
 
 const FormRegisterRestaurant = ({
@@ -16,6 +16,7 @@ const FormRegisterRestaurant = ({
   resetForm,
   setResetForm
 }) => {
+  const [imageRest, setImageRest] = useState(null)
   const defaultValues = {
     img: '',
     name: '',
@@ -48,6 +49,11 @@ const FormRegisterRestaurant = ({
 
   const firstErrorMessage = Object.values(formState.errors)[0]?.message || ''
 
+  const handleImageChangeRest = (e) => {
+    const file = e.target.files[0]
+    setImageRest(file)
+  }
+
   return (
     <form
       id={id}
@@ -69,9 +75,16 @@ const FormRegisterRestaurant = ({
         <p>{subtitle}</p>
       </div>
       <div className='div-form-inputs'>
-        <label htmlFor='imgUser' className='label-register-img'>
-          <MdCameraAlt className='icon-camera' />
-          Imagen de perfil
+        <label
+          htmlFor='imgRestaurant'
+          className={`label-register-img-restaurant ${
+            formState.errors.img ? 'label-register-img-error-restaurant' : ''
+          } ${imageRest ? 'img-selected-restaurant' : ''}`}
+        >
+          <MdCameraAlt className='icon-camera-restaurant' />
+          <span className='label-text-restaurant'>
+            {imageRest ? imageRest.name : 'Imagen de perfil'}
+          </span>
         </label>
         <input
           {...register('img', {
@@ -81,9 +94,10 @@ const FormRegisterRestaurant = ({
             }
           })}
           type='file'
-          id='imgUser'
+          id='imgRestaurant'
           accept='image/*'
           className={formState.errors.img ? 'input-error' : 'input'}
+          onChange={handleImageChangeRest}
         />
         <input
           {...register('name', {

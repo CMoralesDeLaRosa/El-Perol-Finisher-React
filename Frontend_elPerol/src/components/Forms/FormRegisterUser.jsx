@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './Forms.css'
 import { useForm } from 'react-hook-form'
 import { MdCameraAlt } from 'react-icons/md'
@@ -11,6 +12,7 @@ const FormRegisterUser = ({
   onSubmit,
   error
 }) => {
+  const [imageUser, setImageUser] = useState(null)
   const defaultValues = {
     img: '',
     name: '',
@@ -21,6 +23,11 @@ const FormRegisterUser = ({
   const { handleSubmit, register, formState } = useForm({ defaultValues })
 
   const firstErrorMessage = Object.values(formState.errors)[0]?.message || ''
+
+  const handleImageChangeUser = (e) => {
+    const file = e.target.files[0]
+    setImageUser(file)
+  }
 
   return (
     <form
@@ -43,9 +50,16 @@ const FormRegisterUser = ({
         <p>{subtitle}</p>
       </div>
       <div className='div-form-inputs'>
-        <label htmlFor='imgUser' className='label-register-img'>
-          <MdCameraAlt className='icon-camera' />
-          Imagen de perfil
+        <label
+          htmlFor='imgUser'
+          className={`label-register-img-user ${
+            formState.errors.img ? 'label-register-img-error-user' : ''
+          } ${imageUser ? 'img-selected-user' : ''}`}
+        >
+          <MdCameraAlt className='icon-camera-user' />
+          <span className='label-text-user'>
+            {imageUser ? imageUser.name : 'Imagen de perfil'}
+          </span>
         </label>
         <input
           {...register('img', {
@@ -58,7 +72,9 @@ const FormRegisterUser = ({
           id='imgUser'
           accept='image/*'
           className={formState.errors.img ? 'input-error' : 'input'}
+          onChange={handleImageChangeUser}
         />
+
         <input
           {...register('name', {
             required: {

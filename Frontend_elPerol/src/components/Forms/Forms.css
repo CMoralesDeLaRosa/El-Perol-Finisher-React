@@ -58,7 +58,7 @@
 .div-img-form-user {
   position: absolute;
   height: 70px;
-  top: 360px;
+  top: 365px;
   width: 150px;
 }
 .div-img-form-user > img {
@@ -68,7 +68,11 @@
 .input[type='file'] {
   display: none;
 }
-.label-register-img {
+#imgUser.input-error {
+  display: none;
+}
+.label-register-img-user,
+.label-register-img-restaurant {
   display: flex;
   justify-content: start;
   justify-items: start;
@@ -88,15 +92,41 @@
   gap: 5px;
   cursor: pointer;
 }
-.label-register-img:hover {
+.label-register-img-user:hover,
+.label-register-img-restaurant:hover {
   color: #242323;
 }
-.icon-camera {
+.icon-camera-user,
+.icon-camera-restaurant {
   width: 18px;
   height: 18px;
 }
+.label-register-img-user.img-selected-user,
+.label-register-img-restaurant.img-selected-restaurant {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 280px;
+  height: 35px;
+  color: var(--ep-primary-text);
+  overflow: hidden;
+  padding: var(--ep-padding-s);
+  box-sizing: border-box;
+}
+
+.label-text-user,
+.label-text-restaurant {
+  max-width: 90%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: inline-block;
+}
+
 .input-error,
-.difficulty-input-error {
+.difficulty-input-error,
+.label-register-img-error-user,
+.label-register-img-error-restaurant {
   width: 280px;
   height: 40px;
   border-radius: var(--ep-br);
@@ -108,6 +138,7 @@
   background-color: var(--ep-third-bg);
   font-size: 12px;
 }
+
 .input-error-ingredients {
   width: 550px;
   height: 40px;
@@ -161,43 +192,5 @@
     height: 480px;
     width: 380px;
     margin-right: 15px;
-  }
-}
-@media (max-width: 721px) {
-  .div-img-form-user {
-    width: 120px;
-    top: 400px;
-  }
-}
-
-@media (max-width: 530px) {
-  .form-main-page {
-    height: 500px;
-    width: 280px;
-  }
-  .form-main-page .div-form-inputs {
-    height: 180px;
-    margin-top: var(--ep-margin-xs);
-  }
-  .form-main-page .div-form-inputs > .input-error {
-    width: 250px;
-  }
-  .form-main-page .div-form-title > p {
-    font-size: 14px;
-    width: 250px;
-    line-height: 18px;
-    font-weight: 200;
-  }
-  .div-form-title > h3 {
-    width: 250px;
-    font-size: 18px;
-  }
-  .input {
-    width: 230px;
-    height: 30px;
-  }
-  .input[type='file'] {
-    width: 230px;
-    height: 30px;
   }
 }
