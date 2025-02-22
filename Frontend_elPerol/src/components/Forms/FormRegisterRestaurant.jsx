@@ -2,6 +2,7 @@ import './Forms.css'
 import { useForm } from 'react-hook-form'
 import Button from '../Button/Button'
 import { useEffect } from 'react'
+import { MdCameraAlt } from 'react-icons/md'
 
 const FormRegisterRestaurant = ({
   id = '',
@@ -68,6 +69,10 @@ const FormRegisterRestaurant = ({
         <p>{subtitle}</p>
       </div>
       <div className='div-form-inputs'>
+        <label htmlFor='imgUser' className='label-register-img'>
+          <MdCameraAlt className='icon-camera' />
+          Imagen de perfil
+        </label>
         <input
           {...register('img', {
             required: {
@@ -76,10 +81,9 @@ const FormRegisterRestaurant = ({
             }
           })}
           type='file'
-          id='imgRestaurant'
+          id='imgUser'
           accept='image/*'
           className={formState.errors.img ? 'input-error' : 'input'}
-          onChange={handleInputChange}
         />
         <input
           {...register('name', {

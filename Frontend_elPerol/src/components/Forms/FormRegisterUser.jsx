@@ -1,5 +1,6 @@
 import './Forms.css'
 import { useForm } from 'react-hook-form'
+import { MdCameraAlt } from 'react-icons/md'
 import Button from '../Button/Button'
 
 const FormRegisterUser = ({
@@ -42,6 +43,10 @@ const FormRegisterUser = ({
         <p>{subtitle}</p>
       </div>
       <div className='div-form-inputs'>
+        <label htmlFor='imgUser' className='label-register-img'>
+          <MdCameraAlt className='icon-camera' />
+          Imagen de perfil
+        </label>
         <input
           {...register('img', {
             required: {
