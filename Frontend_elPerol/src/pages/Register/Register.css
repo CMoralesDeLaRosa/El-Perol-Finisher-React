@@ -59,7 +59,7 @@
   .article-form-register > #restaurant > .div-form-inputs > input,
   .label-register-img-user,
   .label-register-img-restaurant,
-  .label-register-img {
+  .label-register-img-user.img-selected-user {
     width: 220px;
   }
   .article-form-register > #user > .div-form-inputs > .input-error,
@@ -71,7 +71,7 @@
 
   .div-img-form-user {
     width: 120px;
-    top: 420px;
+    top: 405px;
   }
   .div-form-title > h3 {
     width: 250px;

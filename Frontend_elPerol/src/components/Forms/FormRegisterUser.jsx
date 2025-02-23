@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './Forms.css'
 import { useForm } from 'react-hook-form'
 import { MdCameraAlt } from 'react-icons/md'
@@ -20,7 +20,9 @@ const FormRegisterUser = ({
     password: ''
   }
 
-  const { handleSubmit, register, formState } = useForm({ defaultValues })
+  const { handleSubmit, register, formState, clearErrors } = useForm({
+    defaultValues
+  })
 
   const firstErrorMessage = Object.values(formState.errors)[0]?.message || ''
 
@@ -28,6 +30,12 @@ const FormRegisterUser = ({
     const file = e.target.files[0]
     setImageUser(file)
   }
+
+  useEffect(() => {
+    if (imageUser) {
+      clearErrors('img')
+    }
+  }, [imageUser, clearErrors])
 
   return (
     <form

@@ -72,7 +72,8 @@
   display: none;
 }
 .label-register-img-user,
-.label-register-img-restaurant {
+.label-register-img-restaurant,
+.img-selected-user {
   display: flex;
   justify-content: start;
   justify-items: start;
