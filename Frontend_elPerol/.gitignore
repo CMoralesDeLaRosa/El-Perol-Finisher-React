@@ -1,0 +1,8 @@
+# Ignorar archivos y directorios del sistema operativo
+.DS_Store
+
+# Ignorar archivos de configuración sensibles
+.env
+
+# Ignorar directorios node_modules
+node_modules/
