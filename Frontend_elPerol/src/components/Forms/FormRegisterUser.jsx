@@ -20,27 +20,41 @@ const FormRegisterUser = ({
     password: ''
   }
 
-  const { handleSubmit, register, formState, clearErrors } = useForm({
+  const {
+    handleSubmit,
+    register,
+    formState,
+    clearErrors,
+    setValue,
+    getValues
+  } = useForm({
     defaultValues
   })
 
   const firstErrorMessage = Object.values(formState.errors)[0]?.message || ''
 
+  useEffect(() => {
+    if (imageUser && formState.errors.img) {
+      clearErrors('img')
+    }
+  }, [imageUser, formState.errors.img, clearErrors])
+
   const handleImageChangeUser = (e) => {
     const file = e.target.files[0]
     setImageUser(file)
+    setValue('img', file)
+    clearErrors('img')
   }
 
-  useEffect(() => {
-    if (imageUser) {
-      clearErrors('img')
-    }
-  }, [imageUser, clearErrors])
+  const onSubmitHandler = (data) => {
+    console.log('Datos enviados:', data)
+    onSubmit(data)
+  }
 
   return (
     <form
       id={id}
-      onSubmit={handleSubmit(onSubmit)}
+      onSubmit={handleSubmit(onSubmitHandler)}
       className={`flex-container ${className}`}
       encType='multipart/form-data'
     >
