@@ -10,20 +10,93 @@
 }
 .article-form-register {
   width: 100%;
-  height: 100%;
+  height: 1000px;
   gap: 50px;
-  margin-top: 250px;
-  margin-bottom: 100px;
+  margin-top: 220px;
+  margin-bottom: 150px;
 }
-
-#user,
-#restaurant {
+.form-container {
+  width: 420px;
+  height: 580px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 30px;
+  display: flex;
+}
+.form-register-restaurant,
+.form-register-user {
+  position: relative;
+  height: 580px;
+  width: 420px;
+  flex-direction: column;
+  gap: 15px;
+  padding: var(--ep-padding-m);
   margin: 0;
+  border-radius: var(--ep-br);
+  background-color: var(--ep-first-bg);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease-in-out;
+}
+.form-register-user.active {
+  transform: translateX(0);
+}
+.form-register-user.inactive {
+  transform: translateX(-150%);
+}
+.form-register-restaurant.active {
+  transform: translateX(-100%);
+}
+.form-register-restaurant.inactive {
+  transform: translateX(50%);
+}
+.div-img-form-user {
+  position: absolute;
+  height: 70px;
+  top: 380px;
+  width: 150px;
+}
+.div-img-form-user > img {
+  width: 100%;
+  object-fit: contain;
+}
+.article-form-switch {
+  position: absolute;
+  gap: 30px;
+  bottom: 80px;
+  width: 100%;
+  height: 50px;
+}
+.no-active-switch {
+  width: 120px;
+  height: 40px;
+  border: 2px solid var(--ep-color1);
+  border-radius: var(--ep-br);
+  opacity: 0.7;
+}
+.article-form-switch > div > p {
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.8px;
+  color: var(--ep-color1);
+}
+.active-switch {
+  width: 120px;
+  height: 40px;
+  border: 2px solid var(--ep-color2);
+  border-radius: var(--ep-br);
+}
+.article-form-switch > div.active-switch > p {
+  color: var(--ep-color2);
+  font-weight: 600;
 }
 
 /*MediaQueries*/
 @media (max-width: 1100px) {
-  .article-form-register > form {
+  .form-register-restaurant,
+  .form-register-user {
     width: 380px;
     height: 590px;
   }
@@ -37,44 +110,120 @@
   .article-form-register {
     flex-direction: column;
     width: 100%;
-    height: 100%;
+    height: 700px;
     gap: 50px;
-    margin-top: 200px;
-    margin-bottom: var(--ep-margin-xl);
+    margin-top: 150px;
+    margin-bottom: var(--ep-margin-section);
+  }
+  .article-form-switch {
+    position: absolute;
+    gap: 30px;
+    bottom: 320px;
+    width: 100%;
+    height: 50px;
   }
 }
 @media (max-width: 721px) {
-  .article-form-register > #user,
-  .article-form-register > #restaurant {
+  .article-form-login {
+    top: 170px;
+    gap: 20px;
+  }
+  .form-container {
+    width: 360px;
+    height: 580px;
+  }
+  .form-register-restaurant,
+  .form-register-user {
     width: 280px;
     height: 610px;
   }
-
-  .article-form-register > #user > .div-form-title > p,
-  .article-form-register > #restaurant > .div-form-title > p {
+  .div-form-title > h3 {
+    width: 250px;
+    font-size: 18px;
+  }
+  .form-register-restaurant > .div-form-title > p,
+  .form-register-user > .div-form-title > p {
     width: 250px;
   }
-
-  .article-form-register > #user > .div-form-inputs > input,
-  .article-form-register > #restaurant > .div-form-inputs > input,
+  .form-register-user > .div-form-inputs > input,
+  .form-register-restaurant > .div-form-inputs > input,
   .label-register-img-user,
   .label-register-img-restaurant,
   .label-register-img-user.img-selected-user {
     width: 220px;
   }
-  .article-form-register > #user > .div-form-inputs > .input-error,
-  .article-form-register > #restaurant > .div-form-inputs > .input-error,
+  .form-register-user > .div-form-inputs > .input-error,
+  .form-register-restaurant > .div-form-inputs > .input-error,
   .label-register-img-error-user,
   .label-register-img-error-restaurant {
     width: 250px;
   }
-
   .div-img-form-user {
     width: 120px;
     top: 405px;
   }
-  .div-form-title > h3 {
-    width: 250px;
-    font-size: 18px;
+
+  .article-form-switch {
+    position: absolute;
+    width: 100%;
+    gap: 30px;
+    bottom: 240px;
+    height: 180px;
+  }
+  .no-active-switch {
+    width: 100px;
+    height: 35px;
+    border: 1px solid var(--ep-color1);
+  }
+  .article-form-switch > div > p {
+    font-size: 11px;
+  }
+  .active-switch {
+    width: 100px;
+    height: 35px;
+    border: 1px solid var(--ep-color2);
+  }
+}
+
+@media (max-width: 610px) {
+  .article-form-register {
+    height: 870px;
+    margin-top: 30px;
+  }
+  .form-container {
+    width: 280px;
+    height: 600px;
+  }
+  .form-register-restaurant,
+  .form-register-user {
+    height: 600px;
+    width: 270px;
+    gap: 30px;
+  }
+  .form-register-restaurant > .div-form-inputs > input,
+  .form-register-user > .div-form-inputs > input,
+  .label-register-img-user,
+  .label-register-img-restaurant {
+    width: 200px;
+  }
+  .form-register-user > .div-form-title,
+  .form-register-restaurant > .div-form-title {
+    gap: 20px;
+  }
+  .form-register-restaurant > .div-form-title > p,
+  .form-register-user > .div-form-title > p {
+    width: 200px;
+  }
+  .div-img-form-user {
+    width: 120px;
+    top: 415px;
+  }
+  .article-form-switch {
+    position: absolute;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+    bottom: 260px;
+    height: 180px;
   }
 }

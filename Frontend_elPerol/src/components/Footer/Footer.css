@@ -82,7 +82,7 @@ footer {
     width: 35%;
   }
 }
-@media (max-width: 930px) {
+@media (max-width: 940px) {
   .div-footer-icon {
     width: 35px;
     height: 35px;
@@ -94,12 +94,12 @@ footer {
     height: 17px;
   }
 }
-@media (max-width: 730px) {
+@media (max-width: 745px) {
   .div-footer-line {
     width: 30%;
   }
 }
-@media (max-width: 610px) {
+@media (max-width: 616px) {
   footer {
     width: 100%;
     height: 190px;
@@ -111,7 +111,7 @@ footer {
     height: 120px;
   }
   .div-footer-line {
-    width: 20%;
+    width: 15%;
   }
   .div-footer-icons {
     width: 250px;

@@ -9,6 +9,7 @@ import Footer from '../../components/Footer/Footer'
 import { handleRegisterUser } from '../../utils/handleRegisterUser'
 import { handleRegisterRestaurant } from '../../utils/handleRegisterRestaurant'
 import { useUser } from '../../context/userProvider'
+import SwitchButton from '../../components/SwitchButton/SwitchButton'
 
 const Register = () => {
   const navigate = useNavigate()
@@ -18,6 +19,7 @@ const Register = () => {
   const { updateUserData, updateToken } = useUser()
   const [restaurantSuccess, setRestaurantSuccess] = useState('')
   const [resetForm, setResetForm] = useState(false)
+  const [isUserRegister, setIsUserRegister] = useState(true)
 
   const handleUserRegister = async (data) => {
     setLoading(true)
@@ -53,32 +55,61 @@ const Register = () => {
     }
   }
 
+  const handleSwitchChange = () => {
+    setIsUserRegister(!isUserRegister)
+  }
+
   return (
     <section id='section-register'>
       <Header />
       {loading && <SpinnerLoading />}
       <article className='article-form-register flex-container'>
-        <FormRegisterUser
-          id='user'
-          title='Cuenta básica'
-          subtitle='Crea tus propias recetas, guarda recetas favoritas y conoce nuevos restaurantes.'
-          className='form'
-          onSubmit={handleUserRegister}
-          userError={userError}
+        <div className='form-container'>
+          <FormRegisterUser
+            id='user'
+            title='Cuenta básica'
+            subtitle='Crea tus propias recetas, guarda recetas favoritas y conoce nuevos restaurantes.'
+            className={`form-register-user ${
+              isUserRegister ? 'active' : 'inactive'
+            }`}
+            onSubmit={handleUserRegister}
+            userError={userError}
+          />
+          <FormRegisterRestaurant
+            id='restaurant'
+            title='Cuenta profesional'
+            subtitle='Da a conocer tu restaurante para poder llegar a más clientes de tu zona.'
+            className={`form-register-restaurant ${
+              isUserRegister ? 'inactive' : 'active'
+            }`}
+            onSubmit={handleRestaurantRegister}
+            restaurantError={restaurantError}
+            restaurantSuccess={restaurantSuccess}
+            setRestaurantSuccess={setRestaurantSuccess}
+            resetForm={resetForm}
+            setResetForm={setResetForm}
+          />
+        </div>
+      </article>
+      <article className='article-form-switch flex-container'>
+        <div
+          className={`flex-container ${
+            isUserRegister ? 'active-switch' : 'no-active-switch'
+          }`}
+        >
+          <p>Básica</p>
+        </div>
+        <SwitchButton
+          isChecked={!isUserRegister}
+          onChange={handleSwitchChange}
         />
-
-        <FormRegisterRestaurant
-          id='restaurant'
-          title='Cuenta profesional'
-          subtitle='Da a conocer tu restaurante para poder llegar a más clientes de tu zona.'
-          className='form'
-          onSubmit={handleRestaurantRegister}
-          restaurantError={restaurantError}
-          restaurantSuccess={restaurantSuccess}
-          setRestaurantSuccess={setRestaurantSuccess}
-          resetForm={resetForm}
-          setResetForm={setResetForm}
-        />
+        <div
+          className={`flex-container ${
+            !isUserRegister ? 'active-switch' : 'no-active-switch'
+          }`}
+        >
+          <p>Profesional</p>
+        </div>
       </article>
       <Footer theme='red-dark' />
     </section>
