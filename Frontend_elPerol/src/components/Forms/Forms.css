@@ -1,15 +1,3 @@
-/* .form {
-  position: relative;
-  height: 100%;
-  width: 420px;
-  flex-direction: column;
-  gap: 15px;
-  padding: var(--ep-padding-m);
-  margin: auto;
-  border-radius: var(--ep-br);
-  background-color: var(--ep-first-bg);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-} */
 .div-form-title {
   margin-bottom: var(--ep-margin-xs);
   gap: 14px;
@@ -62,59 +50,6 @@
 #imgUser.input-error {
   display: none;
 }
-.label-register-img-user,
-.label-register-img-restaurant,
-.img-selected-user {
-  display: flex;
-  justify-content: start;
-  justify-items: start;
-  align-items: center;
-  align-content: center;
-  width: 280px;
-  height: 35px;
-  border-radius: var(--ep-br);
-  border: none;
-  padding: 8px var(--ep-padding-s);
-  font-size: 12px;
-  letter-spacing: 1.5px;
-  background-color: var(--ep-third-bg);
-  opacity: 0.9;
-  font-size: 12px;
-  color: #575656;
-  gap: 5px;
-  cursor: pointer;
-}
-.label-register-img-user:hover,
-.label-register-img-restaurant:hover {
-  color: #242323;
-}
-.icon-camera-user,
-.icon-camera-restaurant {
-  width: 18px;
-  height: 18px;
-}
-.label-register-img-user.img-selected-user,
-.label-register-img-restaurant.img-selected-restaurant {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 280px;
-  height: 35px;
-  color: var(--ep-primary-text);
-  overflow: hidden;
-  padding: var(--ep-padding-s);
-  box-sizing: border-box;
-}
-
-.label-text-user,
-.label-text-restaurant {
-  max-width: 90%;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  display: inline-block;
-}
-
 .input-error,
 .difficulty-input-error,
 .label-register-img-error-user,
@@ -130,7 +65,6 @@
   background-color: var(--ep-third-bg);
   font-size: 12px;
 }
-
 .input-error-ingredients {
   width: 550px;
   height: 40px;
@@ -159,30 +93,4 @@
   color: var(--ep-third-text);
   text-transform: uppercase;
   text-align: center;
-}
-
-/*MediaQueries*/
-@media (max-width: 1100px) {
-  .form-main-page {
-    height: 480px;
-    width: 380px;
-    margin: 0;
-  }
-  .div-img-form-user {
-    position: absolute;
-    height: 70px;
-    top: 390px;
-    width: 150px;
-  }
-  .div-img-form-user > img {
-    width: 100%;
-    object-fit: contain;
-  }
-}
-@media (max-width: 1000px) {
-  .form-main-page {
-    height: 480px;
-    width: 380px;
-    margin-right: 15px;
-  }
 }

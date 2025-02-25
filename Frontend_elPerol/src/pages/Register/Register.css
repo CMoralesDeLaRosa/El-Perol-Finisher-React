@@ -92,6 +92,57 @@
   color: var(--ep-color2);
   font-weight: 600;
 }
+.label-register-img-user,
+.label-register-img-restaurant,
+.img-selected-user {
+  display: flex;
+  justify-content: start;
+  justify-items: start;
+  align-items: center;
+  align-content: center;
+  width: 280px;
+  height: 35px;
+  border-radius: var(--ep-br);
+  border: none;
+  padding: 8px var(--ep-padding-s);
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  background-color: var(--ep-third-bg);
+  opacity: 0.9;
+  font-size: 12px;
+  color: #575656;
+  gap: 5px;
+  cursor: pointer;
+}
+.label-register-img-user:hover,
+.label-register-img-restaurant:hover {
+  color: #242323;
+}
+.icon-camera-user,
+.icon-camera-restaurant {
+  width: 18px;
+  height: 18px;
+}
+.label-register-img-user.img-selected-user,
+.label-register-img-restaurant.img-selected-restaurant {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 280px;
+  height: 35px;
+  color: var(--ep-primary-text);
+  overflow: hidden;
+  padding: var(--ep-padding-s);
+  box-sizing: border-box;
+}
+.label-text-user,
+.label-text-restaurant {
+  max-width: 90%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: inline-block;
+}
 
 /*MediaQueries*/
 @media (max-width: 1100px) {
@@ -142,14 +193,17 @@
     font-size: 18px;
   }
   .form-register-restaurant > .div-form-title > p,
-  .form-register-user > .div-form-title > p {
+  .form-register-user > .div-form-title > p,
+  .form-main-page > .div-form-title > p {
     width: 250px;
   }
   .form-register-user > .div-form-inputs > input,
   .form-register-restaurant > .div-form-inputs > input,
   .label-register-img-user,
   .label-register-img-restaurant,
-  .label-register-img-user.img-selected-user {
+  .label-register-img-user.img-selected-user,
+  .form-main-page > .div-form-inputs > input,
+  .form-main-page > .div-form-inputs > .label-register-img-user {
     width: 220px;
   }
   .form-register-user > .div-form-inputs > .input-error,
@@ -211,8 +265,10 @@
     gap: 20px;
   }
   .form-register-restaurant > .div-form-title > p,
-  .form-register-user > .div-form-title > p {
+  .form-register-user > .div-form-title > p,
+  .form-main-page > .div-form-title > p {
     width: 200px;
+    font-size: 14px;
   }
   .div-img-form-user {
     width: 120px;
