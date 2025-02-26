@@ -1,12 +1,10 @@
-import './RecipeDetails.css'
 import React, { useState, useEffect } from 'react'
-import { useUser } from '../../context/userProvider'
+import './RecipeDetails.css'
 import { useParams } from 'react-router-dom'
-
+import { useUser } from '../../context/userProvider'
 import Header from '../../components/HeaderComponents/Header'
 import Footer from '../../components/Footer/Footer'
-import { IoHeartOutline } from 'react-icons/io5'
-import { IoHeartSharp } from 'react-icons/io5'
+import { IoHeartOutline, IoHeartSharp } from 'react-icons/io5'
 import SpinnerLoading from '../../components/SpinnerLoading/SpinnerLoading'
 import useRecipes from '../../hooks/useRecipes'
 import { updateLikesInDatabase, updateUserLikes } from '../../utils/handleLikes'
@@ -17,8 +15,16 @@ const RecipeDetails = () => {
   const { recipes: recipe, loading, error: recipeError } = useRecipes(recipeId)
   const [isLiked, setIsLiked] = useState(false)
   const [error, setError] = useState('')
+  const [isDefaultImage, setIsDefaultImage] = useState(false) // Nuevo estado para la clase
 
-  console.log('recipeyacreada', recipe)
+  const defaultImg =
+    'https://res.cloudinary.com/dmztjnlrp/image/upload/v1740596110/elperol/web-images/Default-image.png'
+
+  const handleImageError = (e) => {
+    e.target.src = defaultImg
+    setIsDefaultImage(true) // Cambia el estado a `true` cuando la imagen es la predeterminada
+  }
+
   useEffect(() => {
     if (!loading) {
       if (userData) {
@@ -108,22 +114,32 @@ const RecipeDetails = () => {
       {error && <p className='error-message'>{error}</p>}
       <article className='article-recipe-main-details'>
         <div className='div-recipe-details-img'>
-          <img src={recipe.img} alt={recipe.name} />
+          <h2>{recipe.name}</h2>
+          <img
+            src={recipe.img || defaultImg}
+            alt={recipe.name}
+            onError={handleImageError}
+            className={
+              isDefaultImage
+                ? 'recipe-details-image-default'
+                : 'recipe-details-image'
+            }
+          />
+          <div className='div-likes-recipe-details' onClick={handleHeartClick}>
+            {isLiked ? (
+              <IoHeartSharp className='icon-like-recipe-details-full' />
+            ) : (
+              <IoHeartOutline className='icon-like-recipe-details-empty' />
+            )}
+            <h4>{recipe.likes}</h4>
+          </div>
         </div>
-        <h2>{recipe.name}</h2>
+
         <div className='div-recipe-details flex-container'>
           <p>Región | {recipe.region}</p>
           <p>Dificultad | {recipe.difficulty}</p>
           <p>Tiempo | {recipe.time} min</p>
           <p>Porciones | {recipe.portions}</p>
-        </div>
-        <div className='div-likes-recipe-details' onClick={handleHeartClick}>
-          {isLiked ? (
-            <IoHeartSharp className='icon-like-recipe-details-full' />
-          ) : (
-            <IoHeartOutline className='icon-like-recipe-details-empty' />
-          )}
-          <h4>{recipe.likes}</h4>
         </div>
       </article>
       <article className='article-recipe-instructions-details flex-container'>

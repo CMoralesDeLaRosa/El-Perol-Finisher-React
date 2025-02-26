@@ -11,6 +11,13 @@ const Recipe = ({
 }) => {
   const navigate = useNavigate()
 
+  const defaultImg =
+    'https://res.cloudinary.com/dmztjnlrp/image/upload/v1740596110/elperol/web-images/Default-image.png'
+
+  const handleImageError = (e) => {
+    e.target.src = defaultImg
+  }
+
   const handleClick = () => {
     navigate(`/recipes/${id}`)
   }
@@ -18,7 +25,11 @@ const Recipe = ({
   return (
     <article className='article-recipe-simple' onClick={handleClick}>
       <div>
-        <img src={imgSrc} alt={RecipeName} />
+        <img
+          src={imgSrc || defaultImg}
+          alt={RecipeName}
+          onError={handleImageError}
+        />
         <div className='div-likes-recipe flex-container'>
           <IoHeartSharp className='icon-like-recipe' />
           <h4>{RecipeLikes}</h4>
