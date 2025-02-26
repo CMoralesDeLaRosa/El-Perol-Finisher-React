@@ -1,5 +1,4 @@
 import { API } from './API'
-import { handleLoginRestaurant } from './handleLoginRestaurant'
 
 export const handleRegisterRestaurant = async (data, setError, setSuccess) => {
   const { img, name, email, password, address, schedule } = data

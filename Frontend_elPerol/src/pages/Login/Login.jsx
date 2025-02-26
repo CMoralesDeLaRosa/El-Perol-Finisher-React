@@ -2,8 +2,7 @@ import './Login.css'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Header from '../../components/HeaderComponents/Header'
-import { handleLoginRestaurant } from '../../utils/handleLoginRestaurant'
-import { handleLoginUser } from '../../utils/handleLoginUser'
+import { handleLogin } from '../../utils/handleLogin'
 import FormLogin from '../../components/Forms/FormLogin'
 import Footer from '../../components/Footer/Footer'
 import { useUser } from '../../context/userProvider'
@@ -15,35 +14,14 @@ const Login = () => {
   const { updateUserData, updateToken } = useUser()
   const [loading, setLoading] = useState(false)
 
-  const onLoginUser = async (data) => {
+  const onLogin = async (data) => {
     setLoading(true)
     try {
-      await handleLoginUser(
-        data,
-        navigate,
-        setError,
-        updateUserData,
-        updateToken
-      )
+      await handleLogin(data, navigate, setError, updateUserData, updateToken)
     } finally {
       setLoading(false)
     }
   }
-
-  // const onLoginRest = async (data) => {
-  //   setLoading(true)
-  //   try {
-  //     await handleLoginRestaurant(
-  //       data,
-  //       navigate,
-  //       setError,
-  //       updateUserData,
-  //       updateToken
-  //     )
-  //   } finally {
-  //     setLoading(false)
-  //   }
-  // }
 
   return (
     <section id='section-login'>
@@ -55,7 +33,7 @@ const Login = () => {
           title={['Iniciar sesión ']}
           className='form-login'
           type='login'
-          onSubmit={onLoginUser}
+          onSubmit={onLogin}
         />
         <div className='div-login-img'>
           <div className='div-img-login-left'>

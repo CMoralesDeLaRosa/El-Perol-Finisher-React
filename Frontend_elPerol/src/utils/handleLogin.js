@@ -1,6 +1,6 @@
 import { API } from './API'
 
-export const handleLoginRestaurant = async (
+export const handleLogin = async (
   data,
   navigate,
   setError,
@@ -11,7 +11,7 @@ export const handleLoginRestaurant = async (
 
   try {
     const { status, response } = await API({
-      endpoint: 'restaurants/login',
+      endpoint: 'login',
       method: 'POST',
       body: { email, password },
       token: null
@@ -19,9 +19,10 @@ export const handleLoginRestaurant = async (
 
     if (status === 200) {
       updateToken(response.token)
-      updateUserData(response.restaurant)
+      updateUserData(response.user)
 
       navigate('/logged')
+      return { success: true }
     } else {
       setError(response.error || 'Ocurrió un error, intente nuevamente')
       return {
@@ -29,7 +30,7 @@ export const handleLoginRestaurant = async (
         error: response.error || 'Ocurrió un error, intente nuevamente'
       }
     }
-  } catch (err) {
+  } catch (error) {
     setError('Ocurrió un error, intente nuevamente')
     return { success: false, error: 'Ocurrió un error, intente nuevamente' }
   }

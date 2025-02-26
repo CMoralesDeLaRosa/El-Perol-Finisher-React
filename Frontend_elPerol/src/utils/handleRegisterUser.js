@@ -1,5 +1,5 @@
 import { API } from './API'
-import { handleLoginUser } from './handleLoginUser'
+import { handleLogin } from './handleLogin'
 
 export const handleRegisterUser = async (
   data,
@@ -30,7 +30,7 @@ export const handleRegisterUser = async (
     })
 
     if (status === 201) {
-      await handleLoginUser(
+      await handleLogin(
         { email, password },
         navigate,
         setError,
