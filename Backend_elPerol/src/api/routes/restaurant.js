@@ -3,7 +3,6 @@ const { upload } = require('../../middlewares/file')
 const {
   getRestaurants,
   registerRestaurant,
-  loginRestaurant,
   updateRestaurant,
   deleteRestaurant,
   getRestaurantsNotVerified,
@@ -31,7 +30,6 @@ restaurantRouter.post(
   upload('restaurants').single('img'),
   registerRestaurant
 )
-restaurantRouter.post('/login', loginRestaurant)
 restaurantRouter.put(
   '/update/:id',
   isAuth,

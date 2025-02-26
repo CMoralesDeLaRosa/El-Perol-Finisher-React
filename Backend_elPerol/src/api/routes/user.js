@@ -2,7 +2,6 @@ const express = require('express')
 const { upload } = require('../../middlewares/file')
 const {
   register,
-  login,
   getUsers,
   updateUser,
   deleteUser,
@@ -19,7 +18,6 @@ const userRouter = express.Router()
 userRouter.get('/:id', isAuth, getUserById)
 userRouter.get('/', isAdmin, getUsers)
 userRouter.post('/register', upload('users').single('img'), register)
-userRouter.post('/login', login)
 userRouter.put('/:id/add-recipe/:recipeId', isAuth, addFavRecipe)
 userRouter.put('/:id/add-restaurant/:restaurantId', isAuth, addFavRestaurant)
 userRouter.put('/:id/delete-recipe/:recipeId', isAuth, deleteFavRecipe)

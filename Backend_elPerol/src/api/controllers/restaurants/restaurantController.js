@@ -2,7 +2,6 @@ const bcrypt = require('bcrypt')
 const mongoose = require('mongoose')
 const cloudinary = require('cloudinary').v2
 const { deleteFile } = require('../../../utils/deleteFile')
-const { generateSign } = require('../../../config/jwt')
 const Restaurant = require('../../models/restaurant')
 const { handleFavourites } = require('../favourites/favouritescontroller')
 
@@ -82,38 +81,6 @@ const registerRestaurant = async (req, res, next) => {
   } catch (error) {
     console.error(error)
     return res.status(500).json({ error: 'Error en el registro' })
-  }
-}
-const loginRestaurant = async (req, res, next) => {
-  try {
-    const restaurant = await Restaurant.findOne({ email: req.body.email })
-      .populate('recipes_created')
-      .populate('recipes_liked')
-      .populate('restaurants_liked')
-
-    if (restaurant) {
-      if (!restaurant.verified) {
-        return res.status(400).json({ error: 'La cuenta no ha sido validada' })
-      }
-    }
-
-    if (restaurant) {
-      if (bcrypt.compareSync(req.body.password, restaurant.password)) {
-        const token = generateSign(restaurant._id)
-
-        return res.status(200).json({ restaurant, token })
-      } else {
-        return res
-          .status(400)
-          .json({ error: 'El usuario o la contraseña son incorrectos' })
-      }
-    } else {
-      return res
-        .status(400)
-        .json({ error: 'El usuario o la contraseña son incorrectos' })
-    }
-  } catch (error) {
-    return res.status(400).json({ error: 'Error en el loggin' })
   }
 }
 const updateRestaurant = async (req, res, next) => {
@@ -363,7 +330,6 @@ module.exports = {
   getRestaurantsNotVerified,
   getRestaurantById,
   registerRestaurant,
-  loginRestaurant,
   updateRestaurant,
   updateRestaurantLikes,
   deleteRestaurant,
