@@ -350,9 +350,10 @@
     text-transform: uppercase;
     font-weight: 400;
     cursor: pointer;
+    width: auto;
   }
   .button-header.button-active {
-    width: 150px;
+    width: auto;
     height: 60px;
   }
 }
