@@ -71,8 +71,8 @@
   color: var(--ep-color2);
   letter-spacing: 3px;
   font-weight: 200;
+  z-index: 30px;
   cursor: pointer;
-  z-index: 10px;
 }
 .button-dark-m:hover {
   color: var(--ep-second-text);

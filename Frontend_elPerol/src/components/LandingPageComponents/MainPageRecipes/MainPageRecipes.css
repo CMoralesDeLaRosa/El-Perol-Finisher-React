@@ -9,6 +9,7 @@
   align-content: center;
   padding: var(--ep-padding-xl) 0 var(--ep-padding-section) 0;
   background-color: var(--ep-first-bg);
+  z-index: 0px;
 }
 #section-main-page-recipes h2 {
   font-family: 'Lora', serif;
