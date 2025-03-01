@@ -151,6 +151,10 @@
     width: 380px;
     height: 590px;
   }
+  .form-container {
+    width: 380px;
+    height: 590px;
+  }
 }
 @media (max-width: 950px) {
   #section-register {
@@ -175,14 +179,15 @@
   }
 }
 @media (max-width: 721px) {
+  .form-container {
+    width: 280px;
+    height: 610px;
+  }
   .article-form-login {
     top: 170px;
     gap: 20px;
   }
-  .form-container {
-    width: 360px;
-    height: 580px;
-  }
+
   .form-register-restaurant,
   .form-register-user {
     width: 280px;
