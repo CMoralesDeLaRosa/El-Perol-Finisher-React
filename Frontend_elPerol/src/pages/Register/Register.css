@@ -190,9 +190,13 @@
   }
 }
 @media (max-width: 721px) {
+  .form-register-restaurant > .div-form-inputs,
+  .form-register-user > .div-form-inputs {
+    margin-bottom: var(--ep-margin-xl);
+  }
   .form-container {
     width: 280px;
-    height: 630px;
+    height: 700px;
   }
   .article-form-login {
     top: 170px;
@@ -201,7 +205,7 @@
   .form-register-restaurant,
   .form-register-user {
     width: 280px;
-    height: 630px;
+    height: 700px;
   }
   .div-form-title > h3 {
     width: 250px;
@@ -229,7 +233,7 @@
   }
   .div-img-form-user {
     width: 120px;
-    top: 405px;
+    top: 450px;
   }
   .article-form-switch {
     position: absolute;
@@ -254,26 +258,26 @@
   .error-message-form {
     width: 230px;
     left: 25px;
-    bottom: 120px;
+    bottom: 130px;
   }
 }
 @media (max-width: 610px) {
   .error-message-form {
     width: 220px;
     left: 25px;
-    bottom: 90px;
+    bottom: 150px;
   }
   .article-form-register {
-    height: 870px;
+    height: 1050px;
     margin-top: 30px;
   }
   .form-container {
     width: 270px;
-    height: 620;
+    height: 750px;
   }
   .form-register-restaurant,
   .form-register-user {
-    height: 620px;
+    height: 750px;
     width: 270px;
     gap: 30px;
   }
@@ -294,8 +298,8 @@
     font-size: 14px;
   }
   .div-img-form-user {
-    width: 120px;
-    top: 405px;
+    width: 130px;
+    top: 480px;
   }
   .article-form-switch {
     position: absolute;
