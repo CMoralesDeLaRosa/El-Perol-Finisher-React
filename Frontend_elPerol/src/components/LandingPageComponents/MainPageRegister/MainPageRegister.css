@@ -68,6 +68,10 @@
   border-radius: var(--ep-br);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+.form-main-page > .div-form-inputs > .input[type='file'] {
+  display: none;
+}
 .form-main-page > .div-img-form-user {
   display: none;
 }
