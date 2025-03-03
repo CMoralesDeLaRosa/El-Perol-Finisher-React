@@ -19,11 +19,12 @@ const FormRegisterUser = ({
     password: ''
   }
 
-  const [isButtonPressed, setButtonPressed] = useState(false)
+  const { handleSubmit, register, formState, setValue, watch, trigger } =
+    useForm({
+      defaultValues
+    })
 
-  useEffect(() => {}, [isButtonPressed])
-
-  const { handleSubmit, register, formState } = useForm({ defaultValues })
+  const selectedImage = watch('img')
 
   const firstErrorMessage = Object.values(formState.errors)[0]?.message || ''
 
@@ -51,20 +52,24 @@ const FormRegisterUser = ({
         <label
           htmlFor='imgUser'
           className={`label-register-img-user ${
-            formState.errors.img ? 'label-register-img-error-user' : ''
-          } `}
+            formState.errors.img
+              ? 'label-register-img-error-user'
+              : selectedImage?.length > 0
+              ? ''
+              : ''
+          }`}
         >
           <MdCameraAlt className='icon-camera-user' />
           <span className='label-text-user'>
-            {isButtonPressed && !formState.errors.img
-              ? 'Imagen elegida ✔'
+            {selectedImage?.length > 0
+              ? '✔ Imagen seleccionada'
               : 'Imagen de perfil'}
           </span>
         </label>
         <input
           {...register('img', {
             required: {
-              value: true,
+              value: selectedImage?.length === 0,
               message: 'Es necesario elegir una imagen de perfil'
             }
           })}
@@ -134,11 +139,6 @@ const FormRegisterUser = ({
         buttonTitle='Regístrate'
         className='button-dark-s'
         type='submit'
-        onClick={(e) => {
-          e.preventDefault()
-          setButtonPressed(true)
-          handleSubmit(onSubmit)()
-        }}
       />
     </form>
   )
