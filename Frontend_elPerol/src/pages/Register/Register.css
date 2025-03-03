@@ -187,7 +187,6 @@
     top: 170px;
     gap: 20px;
   }
-
   .form-register-restaurant,
   .form-register-user {
     width: 280px;
@@ -213,15 +212,14 @@
   }
   .form-register-user > .div-form-inputs > .input-error,
   .form-register-restaurant > .div-form-inputs > .input-error,
-  .label-register-img-error-user,
-  .label-register-img-error-restaurant {
+  .label-register-img-user.label-register-img-error-user,
+  .label-register-img-restaurant.label-register-img-error-restaurant {
     width: 250px;
   }
   .div-img-form-user {
     width: 120px;
     top: 405px;
   }
-
   .article-form-switch {
     position: absolute;
     width: 100%;

@@ -52,8 +52,8 @@
 }
 .input-error,
 .difficulty-input-error,
-.label-register-img-error-user,
-.label-register-img-error-restaurant {
+.label-register-img-user.label-register-img-error-user,
+.label-register-img-restaurant.label-register-img-error-restaurant {
   width: 280px;
   height: 40px;
   border-radius: var(--ep-br);
@@ -65,6 +65,7 @@
   background-color: var(--ep-third-bg);
   font-size: 12px;
 }
+
 .input-error-ingredients {
   width: 550px;
   height: 40px;

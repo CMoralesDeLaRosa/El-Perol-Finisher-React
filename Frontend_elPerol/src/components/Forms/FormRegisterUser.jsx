@@ -12,7 +12,6 @@ const FormRegisterUser = ({
   onSubmit,
   error
 }) => {
-  const [imageUser, setImageUser] = useState(null)
   const defaultValues = {
     img: '',
     name: '',
@@ -20,41 +19,18 @@ const FormRegisterUser = ({
     password: ''
   }
 
-  const {
-    handleSubmit,
-    register,
-    formState,
-    clearErrors,
-    setValue,
-    getValues
-  } = useForm({
-    defaultValues
-  })
+  const [isButtonPressed, setButtonPressed] = useState(false)
+
+  useEffect(() => {}, [isButtonPressed])
+
+  const { handleSubmit, register, formState } = useForm({ defaultValues })
 
   const firstErrorMessage = Object.values(formState.errors)[0]?.message || ''
-
-  useEffect(() => {
-    if (imageUser && formState.errors.img) {
-      clearErrors('img')
-    }
-  }, [imageUser, formState.errors.img, clearErrors])
-
-  const handleImageChangeUser = (e) => {
-    const file = e.target.files[0]
-    setImageUser(file)
-    setValue('img', file)
-    clearErrors('img')
-  }
-
-  const onSubmitHandler = (data) => {
-    console.log('Datos enviados:', data)
-    onSubmit(data)
-  }
 
   return (
     <form
       id={id}
-      onSubmit={handleSubmit(onSubmitHandler)}
+      onSubmit={handleSubmit(onSubmit)}
       className={`flex-container ${className}`}
       encType='multipart/form-data'
     >
@@ -76,11 +52,13 @@ const FormRegisterUser = ({
           htmlFor='imgUser'
           className={`label-register-img-user ${
             formState.errors.img ? 'label-register-img-error-user' : ''
-          } ${imageUser ? 'img-selected-user' : ''}`}
+          } `}
         >
           <MdCameraAlt className='icon-camera-user' />
           <span className='label-text-user'>
-            {imageUser ? imageUser.name : 'Imagen de perfil'}
+            {isButtonPressed && !formState.errors.img
+              ? 'Imagen elegida ✔'
+              : 'Imagen de perfil'}
           </span>
         </label>
         <input
@@ -94,9 +72,7 @@ const FormRegisterUser = ({
           id='imgUser'
           accept='image/*'
           className={formState.errors.img ? 'input-error' : 'input'}
-          onChange={handleImageChangeUser}
         />
-
         <input
           {...register('name', {
             required: {
@@ -158,6 +134,11 @@ const FormRegisterUser = ({
         buttonTitle='Regístrate'
         className='button-dark-s'
         type='submit'
+        onClick={(e) => {
+          e.preventDefault()
+          setButtonPressed(true)
+          handleSubmit(onSubmit)()
+        }}
       />
     </form>
   )
