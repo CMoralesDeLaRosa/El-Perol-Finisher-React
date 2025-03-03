@@ -42,12 +42,6 @@ const FormRegisterRestaurant = ({
     }
   }, [resetForm, reset, defaultValues, setResetForm])
 
-  const handleInputChange = () => {
-    if (restaurantSuccess) {
-      setRestaurantSuccess('')
-    }
-  }
-
   const firstErrorMessage = Object.values(formState.errors)[0]?.message || ''
 
   return (
@@ -111,7 +105,6 @@ const FormRegisterRestaurant = ({
           id='nameRestaurant'
           placeholder='Nombre del restaurante'
           className={formState.errors.name ? 'input-error' : 'input'}
-          onChange={handleInputChange}
         />
         <input
           {...register('email', {
@@ -128,7 +121,6 @@ const FormRegisterRestaurant = ({
           id='restaurantRegisterEmail'
           placeholder='Email'
           className={formState.errors.email ? 'input-error' : 'input'}
-          onChange={handleInputChange}
         />
         <input
           {...register('password', {
@@ -146,7 +138,6 @@ const FormRegisterRestaurant = ({
           id='restaurantRegisterPassword'
           placeholder='Contraseña'
           className={formState.errors.password ? 'input-error' : 'input'}
-          onChange={handleInputChange}
         />
         <input
           {...register('address', {
@@ -159,7 +150,6 @@ const FormRegisterRestaurant = ({
           id='addressRestaurant'
           placeholder='Dirección'
           className={formState.errors.address ? 'input-error' : 'input'}
-          onChange={handleInputChange}
         />
         <input
           {...register('schedule', {
@@ -178,7 +168,6 @@ const FormRegisterRestaurant = ({
           id='scheduleRestaurant'
           placeholder='Horario de apertura'
           className={formState.errors.schedule ? 'input-error' : 'input'}
-          onChange={handleInputChange}
         />
       </div>
 
