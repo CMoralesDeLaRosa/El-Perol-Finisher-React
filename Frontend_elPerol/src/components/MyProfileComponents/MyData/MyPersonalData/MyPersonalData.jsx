@@ -5,9 +5,12 @@ import { FaPencilAlt } from 'react-icons/fa'
 import SpinnerLoading from '../../../SpinnerLoading/SpinnerLoading'
 import { useUser } from '../../../../context/userProvider'
 import { editData } from '../../../../utils/editData'
+import { MdCameraAlt } from 'react-icons/md'
+import { FaCheck } from 'react-icons/fa'
 
 const MyPersonalData = () => {
   const { userData, updateUserData, token } = useUser()
+  const [imageSelected, setImageSelected] = useState(false)
   const [isEditing, setIsEditing] = useState({
     img: false,
     name: false,
@@ -55,6 +58,7 @@ const MyPersonalData = () => {
           localStorage.setItem('userData', JSON.stringify(updatedData))
 
           setIsEditing((prevEditing) => ({ ...prevEditing, [field]: false }))
+          setImageSelected(false) // Resetear la selección de imagen después de guardar
           setError('')
           setPasswordError('')
         } else {
@@ -95,7 +99,21 @@ const MyPersonalData = () => {
     if (field === 'img') {
       return (
         <div className='div-render-field-my-data-img'>
-          <label>{label}</label>
+          {isEditing.img && (
+            <label
+              htmlFor='input-file'
+              className={`custom-file-label-profile flex-container ${
+                imageSelected ? 'image-selected' : ''
+              }`}
+            >
+              {imageSelected ? (
+                '✔'
+              ) : (
+                <MdCameraAlt className='icon-camera-user' />
+              )}
+            </label>
+          )}
+
           <div className='div-field-with-icon-img'>
             {isEditing.img ? (
               <div className='field-input-with-button flex-container'>
@@ -103,7 +121,10 @@ const MyPersonalData = () => {
                   type='file'
                   ref={fieldRefs.img}
                   accept='image/*'
+                  id='input-file'
                   className='input-file-field'
+                  style={{ display: 'none' }}
+                  onChange={() => setImageSelected(true)}
                 />
                 <Button
                   buttonTitle='Guardar'
