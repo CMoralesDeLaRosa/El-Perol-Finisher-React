@@ -1,8 +1,8 @@
 import './Forms.css'
 import { useForm } from 'react-hook-form'
 import Button from '../Button/Button'
-import { useEffect, useState } from 'react'
 import { MdCameraAlt } from 'react-icons/md'
+import { useEffect } from 'react'
 
 const FormRegisterRestaurant = ({
   id = '',
@@ -16,7 +16,6 @@ const FormRegisterRestaurant = ({
   resetForm,
   setResetForm
 }) => {
-  const [imageRest, setImageRest] = useState(null)
   const defaultValues = {
     img: '',
     name: '',
@@ -26,9 +25,11 @@ const FormRegisterRestaurant = ({
     schedule: ''
   }
 
-  const { handleSubmit, register, formState, reset } = useForm({
+  const { handleSubmit, register, formState, reset, watch } = useForm({
     defaultValues
   })
+
+  const selectedImage = watch('img')
 
   useEffect(() => {
     if (resetForm) {
@@ -48,11 +49,6 @@ const FormRegisterRestaurant = ({
   }
 
   const firstErrorMessage = Object.values(formState.errors)[0]?.message || ''
-
-  const handleImageChangeRest = (e) => {
-    const file = e.target.files[0]
-    setImageRest(file)
-  }
 
   return (
     <form
@@ -76,28 +72,33 @@ const FormRegisterRestaurant = ({
       </div>
       <div className='div-form-inputs'>
         <label
-          htmlFor='imgRestaurant'
+          htmlFor='imgRest'
           className={`label-register-img-restaurant ${
-            formState.errors.img ? 'label-register-img-error-restaurant' : ''
-          } ${imageRest ? 'img-selected-restaurant' : ''}`}
+            formState.errors.img
+              ? 'label-register-img-error-restaurant'
+              : selectedImage?.length > 0
+              ? ''
+              : ''
+          }`}
         >
           <MdCameraAlt className='icon-camera-restaurant' />
           <span className='label-text-restaurant'>
-            {imageRest ? imageRest.name : 'Imagen de perfil'}
+            {selectedImage?.length > 0
+              ? '✔ Imagen seleccionada'
+              : 'Imagen de perfil'}
           </span>
         </label>
         <input
           {...register('img', {
             required: {
-              value: true,
+              value: selectedImage?.length === 0,
               message: 'Es necesario elegir una imagen de perfil'
             }
           })}
           type='file'
-          id='imgRestaurant'
+          id='imgRest'
           accept='image/*'
           className={formState.errors.img ? 'input-error' : 'input'}
-          onChange={handleImageChangeRest}
         />
         <input
           {...register('name', {

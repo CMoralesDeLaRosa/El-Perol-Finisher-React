@@ -44,12 +44,6 @@
   background-color: var(--ep-third-bg);
 }
 
-.input[type='file'] {
-  display: none;
-}
-#imgUser.input-error {
-  display: none;
-}
 .input-error,
 .difficulty-input-error,
 .label-register-img-user.label-register-img-error-user,
@@ -94,4 +88,14 @@
   color: var(--ep-third-text);
   text-transform: uppercase;
   text-align: center;
+}
+
+@media (max-width: 610px) {
+  .input-error,
+  .difficulty-input-error,
+  .label-register-img-user.label-register-img-error-user,
+  .label-register-img-restaurant.label-register-img-error-restaurant {
+    width: 220px;
+    height: 35px;
+  }
 }

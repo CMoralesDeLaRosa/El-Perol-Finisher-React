@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import './Forms.css'
 import { useForm } from 'react-hook-form'
 import { MdCameraAlt } from 'react-icons/md'
@@ -19,10 +18,9 @@ const FormRegisterUser = ({
     password: ''
   }
 
-  const { handleSubmit, register, formState, setValue, watch, trigger } =
-    useForm({
-      defaultValues
-    })
+  const { handleSubmit, register, formState, watch } = useForm({
+    defaultValues
+  })
 
   const selectedImage = watch('img')
 

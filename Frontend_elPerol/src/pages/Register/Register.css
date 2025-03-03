@@ -2,7 +2,7 @@
 #section-register {
   position: relative;
   width: 100%;
-  height: 1000px;
+  height: 1200px;
   padding-bottom: 200px;
   background-color: var(--ep-second-bg);
   display: flex;
@@ -10,14 +10,14 @@
 }
 .article-form-register {
   width: 100%;
-  height: 1000px;
+  height: auto;
   gap: 50px;
   margin-top: 220px;
-  margin-bottom: 150px;
+  margin-bottom: 120px;
 }
 .form-container {
   width: 420px;
-  height: 580px;
+  height: 700px;
   position: relative;
   overflow: hidden;
   margin-top: 30px;
@@ -26,10 +26,10 @@
 .form-register-restaurant,
 .form-register-user {
   position: relative;
-  height: 580px;
+  height: 700px;
   width: 420px;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px;
   padding: var(--ep-padding-m);
   margin: 0;
   border-radius: var(--ep-br);
@@ -37,7 +37,20 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.5s ease-in-out;
 }
-.form-register-user.active {
+.form-register-restaurant > .div-form-inputs,
+.form-register-user > .div-form-inputs {
+  height: 320px;
+  margin-bottom: var(--ep-margin-m);
+}
+.form-register-restaurant > .div-form-inputs > .input[type='file'],
+.form-register-user > .div-form-inputs > .input[type='file'] {
+  display: none;
+}
+#imgRest.input-error,
+#imgUser.input-error {
+  display: none;
+}
+.form-register-restaurant > .div-form-inputs .form-register-user.active {
   transform: translateX(0);
 }
 .form-register-user.inactive {
@@ -52,7 +65,7 @@
 .div-img-form-user {
   position: absolute;
   height: 70px;
-  top: 380px;
+  bottom: 200px;
   width: 150px;
 }
 .div-img-form-user > img {
@@ -62,7 +75,7 @@
 .article-form-switch {
   position: absolute;
   gap: 30px;
-  bottom: 80px;
+  bottom: 150px;
   width: 100%;
   height: 50px;
 }
@@ -149,11 +162,9 @@
   .form-register-restaurant,
   .form-register-user {
     width: 380px;
-    height: 590px;
   }
   .form-container {
     width: 380px;
-    height: 590px;
   }
 }
 @media (max-width: 950px) {
@@ -165,7 +176,7 @@
   .article-form-register {
     flex-direction: column;
     width: 100%;
-    height: 700px;
+    height: 800px;
     gap: 50px;
     margin-top: 150px;
     margin-bottom: var(--ep-margin-section);
@@ -246,7 +257,6 @@
     bottom: 120px;
   }
 }
-
 @media (max-width: 610px) {
   .error-message-form {
     width: 220px;
@@ -258,12 +268,12 @@
     margin-top: 30px;
   }
   .form-container {
-    width: 280px;
-    height: 600px;
+    width: 270px;
+    height: 620;
   }
   .form-register-restaurant,
   .form-register-user {
-    height: 600px;
+    height: 620px;
     width: 270px;
     gap: 30px;
   }
