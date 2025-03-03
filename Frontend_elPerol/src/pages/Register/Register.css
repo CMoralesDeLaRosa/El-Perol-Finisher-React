@@ -181,16 +181,16 @@
 @media (max-width: 721px) {
   .form-container {
     width: 280px;
-    height: 610px;
+    height: 630px;
   }
   .article-form-login {
     top: 170px;
-    gap: 20px;
+    gap: 30px;
   }
   .form-register-restaurant,
   .form-register-user {
     width: 280px;
-    height: 610px;
+    height: 630px;
   }
   .div-form-title > h3 {
     width: 250px;
@@ -240,9 +240,19 @@
     height: 35px;
     border: 1px solid var(--ep-color2);
   }
+  .error-message-form {
+    width: 230px;
+    left: 25px;
+    bottom: 120px;
+  }
 }
 
 @media (max-width: 610px) {
+  .error-message-form {
+    width: 220px;
+    left: 25px;
+    bottom: 90px;
+  }
   .article-form-register {
     height: 870px;
     margin-top: 30px;
@@ -275,7 +285,7 @@
   }
   .div-img-form-user {
     width: 120px;
-    top: 415px;
+    top: 405px;
   }
   .article-form-switch {
     position: absolute;
