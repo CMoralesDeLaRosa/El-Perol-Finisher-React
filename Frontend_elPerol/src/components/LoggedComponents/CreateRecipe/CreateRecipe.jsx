@@ -39,7 +39,7 @@ const CreateRecipe = () => {
 
       return () => clearTimeout(timer)
     }
-  }, [successMessage]) // Se ejecuta solo cuando `successMessage` cambia
+  }, [successMessage])
 
   return (
     <section
