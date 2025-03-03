@@ -43,25 +43,11 @@
   letter-spacing: 1.5px;
   background-color: var(--ep-third-bg);
 }
-
 .input-error,
 .difficulty-input-error,
 .label-register-img-user.label-register-img-error-user,
 .label-register-img-restaurant.label-register-img-error-restaurant {
   width: 280px;
-  height: 40px;
-  border-radius: var(--ep-br);
-  border: none;
-  padding: 8px var(--ep-padding-s);
-  font-size: 12px;
-  letter-spacing: 1.5px;
-  border: 2px solid var(--ep-color7);
-  background-color: var(--ep-third-bg);
-  font-size: 12px;
-}
-
-.input-error-ingredients {
-  width: 550px;
   height: 40px;
   border-radius: var(--ep-br);
   border: none;

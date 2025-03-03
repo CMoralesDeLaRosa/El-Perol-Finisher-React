@@ -190,6 +190,19 @@
   border: 2px solid var(--ep-color7);
 }
 
+.input-error-ingredients {
+  width: 550px;
+  height: 40px;
+  border-radius: var(--ep-br);
+  border: none;
+  padding: 8px var(--ep-padding-s);
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  border: 2px solid var(--ep-color7);
+  background-color: var(--ep-third-bg);
+  font-size: 12px;
+}
+
 /*MediaQueries*/
 @media (max-width: 1300px) {
   #section-create-recipe {

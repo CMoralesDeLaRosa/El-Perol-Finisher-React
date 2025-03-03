@@ -114,4 +114,7 @@
     font-size: 13px;
     letter-spacing: 2.5px;
   }
+  .article-recipe-simple:hover h3 {
+    transform: translateY(-120px);
+  }
 }
