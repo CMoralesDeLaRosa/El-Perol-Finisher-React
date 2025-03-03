@@ -43,10 +43,29 @@
   letter-spacing: 1.5px;
   background-color: var(--ep-third-bg);
 }
+.label-register-img-recipe {
+  display: flex;
+  justify-content: start;
+  justify-items: start;
+  align-items: center;
+  align-content: center;
+  width: 280px;
+  height: 35px;
+  border-radius: var(--ep-br);
+  border: none;
+  padding: 0 var(--ep-padding-s);
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  background-color: var(--ep-third-bg);
+  gap: 5px;
+  color: #575656;
+  cursor: pointer;
+}
 .input-error,
 .difficulty-input-error,
 .label-register-img-user.label-register-img-error-user,
-.label-register-img-restaurant.label-register-img-error-restaurant {
+.label-register-img-restaurant.label-register-img-error-restaurant,
+.label-register-img-error-recipe {
   width: 280px;
   height: 40px;
   border-radius: var(--ep-br);

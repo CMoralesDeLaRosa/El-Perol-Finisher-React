@@ -138,7 +138,7 @@
     bottom: -30px;
     width: 250px;
   }
-  .error-message-form {
+  .form-login.error-message-form {
     position: absolute;
     width: 200px;
     left: 45px;

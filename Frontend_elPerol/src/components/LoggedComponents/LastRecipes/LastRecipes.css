@@ -3,13 +3,11 @@
   width: 100%;
   height: 700px;
   gap: 40px;
-  padding: var(--ep-padding-section) 340px;
 }
 #section-last-recipes h2 {
-  align-self: self-start;
+  width: 1200px;
   font-family: 'Lora', serif;
   font-optical-sizing: auto;
-  width: 100%;
   font-weight: 600;
   font-style: normal;
   font-size: 35px;
@@ -35,12 +33,12 @@
 }
 
 /*MediaQueries*/
-@media (max-width: 1420px) {
+@media (max-width: 1580px) {
+  #section-last-recipes h2 {
+    width: 900px;
+  }
   .article-last-recipes > *:last-child {
     display: none;
-  }
-  .article-last-recipes {
-    justify-content: space-between;
   }
 }
 @media (max-width: 1100px) {
@@ -62,6 +60,7 @@
   #section-last-recipes {
     height: auto;
     padding-bottom: 0;
+    flex-direction: column;
   }
   .article-last-recipes {
     height: auto;

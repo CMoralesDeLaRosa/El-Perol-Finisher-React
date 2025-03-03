@@ -6,7 +6,6 @@
   gap: 50px;
   padding: var(--ep-padding-m) var(--ep-padding-section);
 }
-
 .div-success-message {
   position: absolute;
   top: 50%;
@@ -20,7 +19,6 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   z-index: 10000;
 }
-
 .success-message {
   width: 300px;
   font-size: 14px;
@@ -48,7 +46,6 @@
   flex-direction: column;
   gap: 25px;
 }
-
 .div-form-title-create-recipe > div > h3 {
   font-weight: 600;
   width: 400px;
@@ -76,11 +73,12 @@
 .img-jar-right {
   height: 100px;
 }
-
 .img-jar-left {
   height: 100px;
 }
-
+#imgRecipe {
+  display: none;
+}
 .div-ingredients-list {
   width: 100%;
 }
@@ -189,7 +187,6 @@
   word-wrap: break-word;
   border: 2px solid var(--ep-color7);
 }
-
 .input-error-ingredients {
   width: 550px;
   height: 40px;
@@ -213,14 +210,14 @@
     padding: var(--ep-padding-m) var(--ep-padding-section);
   }
   .form-create-recipe {
-    width: 1000px;
+    width: 900px;
     height: 1100px;
     margin: 100px;
     gap: 20px;
     flex-direction: column;
     background-color: var(--ep-first-bg);
     border-radius: var(--ep-br);
-    padding: var(--ep-padding-m) var(--ep-padding-l);
+    padding: var(--ep-padding-l) var(--ep-padding-section);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
   .div-form-title-create-recipe {
@@ -235,9 +232,8 @@
     height: 800px;
     gap: 10px;
   }
-  .difficulty-input {
-    width: 100%;
-  }
+  .difficulty-input,
+  .label-register-img-recipe,
   .difficulty-input-error {
     width: 100%;
   }
@@ -277,10 +273,12 @@
     width: 350px;
     height: 100px;
   }
-
   .success-message {
     font-size: 12px;
     line-height: 1.6;
+  }
+  .input-ingredients {
+    width: 400px;
   }
 }
 @media (max-width: 950px) {
@@ -338,7 +336,9 @@
   .div-form-inputs-create-recipe {
     gap: 0;
   }
-  .div-form-inputs-create-recipe > div:first-of-type input {
+  .div-form-inputs-create-recipe > div:first-of-type input,
+  .label-register-img-recipe,
+  .difficulty-input {
     font-size: 10px;
     letter-spacing: 0.5;
     width: 220px;
@@ -348,12 +348,8 @@
     flex-direction: column;
     gap: 20px;
   }
-  #difficultyRecipe.input {
-    font-size: 10px;
-    width: 220px;
-    letter-spacing: 0.5;
-  }
-  #difficultyRecipe.input-error {
+
+  .difficulty-input-error {
     font-size: 10px;
     width: 220px;
     letter-spacing: 0.5;

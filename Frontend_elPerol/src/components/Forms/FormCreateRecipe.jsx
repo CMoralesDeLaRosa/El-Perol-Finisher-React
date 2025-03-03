@@ -2,6 +2,7 @@ import './Forms.css'
 import React, { useEffect, useState } from 'react'
 import { useForm, useFieldArray } from 'react-hook-form'
 import Button from '../Button/Button'
+import { MdCameraAlt } from 'react-icons/md'
 
 const FormCreateRecipe = ({
   id = '',
@@ -21,7 +22,8 @@ const FormCreateRecipe = ({
     formState,
     reset,
     trigger,
-    getValues
+    getValues,
+    watch
   } = useForm({
     defaultValues: {
       img: '',
@@ -34,6 +36,8 @@ const FormCreateRecipe = ({
       ingredients: []
     }
   })
+
+  const selectedImage = watch('img')
 
   const { fields, append, remove } = useFieldArray({
     control,
@@ -148,11 +152,29 @@ const FormCreateRecipe = ({
 
       <div className='div-form-inputs-create-recipe flex-container'>
         <div className='flex-container'>
+          <label
+            htmlFor='imgRecipe'
+            className={`label-register-img-recipe ${
+              formState.errors.img
+                ? 'label-register-img-error-recipe'
+                : selectedImage?.length > 0
+                ? ''
+                : ''
+            }`}
+          >
+            <MdCameraAlt className='icon-camera-user' />
+            <span className='label-text-user'>
+              {selectedImage?.length > 0
+                ? '✔ Imagen seleccionada'
+                : 'Imagen de perfil'}
+            </span>
+          </label>
           <input
             {...register('img', {
               required: 'Es necesario elegir una imagen de la receta'
             })}
             type='file'
+            id='imgRecipe'
             accept='image/*'
             className={formState.errors.img ? 'input-error' : 'input'}
           />
@@ -161,6 +183,7 @@ const FormCreateRecipe = ({
               required: 'Es necesario el nombre de la receta'
             })}
             type='text'
+            id='nameRecipe'
             placeholder='Nombre'
             className={formState.errors.name ? 'input-error' : 'input'}
           />

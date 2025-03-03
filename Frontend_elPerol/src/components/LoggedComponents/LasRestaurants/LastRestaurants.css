@@ -4,13 +4,11 @@
   height: 860px;
   flex-direction: column;
   gap: 110px;
-  padding: var(--ep-padding-m) 340px;
 }
 #section-last-restaurants h2 {
-  align-self: self-start;
   font-family: 'Lora', serif;
   font-optical-sizing: auto;
-  width: 100%;
+  width: 1200px;
   font-weight: 600;
   font-style: normal;
   font-size: 35px;
@@ -27,19 +25,19 @@
 }
 
 /*MediaQueries*/
-@media (max-width: 1420px) {
+@media (max-width: 1300px) {
   .article-last-restaurants > *:last-child {
     display: none;
   }
-  .article-last-restaurants {
-    justify-content: space-between;
+  #section-last-restaurants h2 {
+    width: 800px;
   }
 }
-
 @media (max-width: 1100px) {
   #section-last-restaurants {
     height: auto;
-    gap: 80px;
+    gap: 70px;
+    margin: var(--ep-margin-section) 0;
   }
   #section-last-restaurants h2 {
     font-size: 30px;
@@ -47,6 +45,7 @@
     width: 100%;
     line-height: 30px;
     text-align: center;
+    margin-bottom: 80px;
   }
   .article-last-restaurants {
     justify-content: center;

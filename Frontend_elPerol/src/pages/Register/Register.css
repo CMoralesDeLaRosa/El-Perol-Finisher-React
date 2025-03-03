@@ -255,7 +255,8 @@
     height: 35px;
     border: 1px solid var(--ep-color2);
   }
-  .error-message-form {
+  .form-register-user.error-message-form,
+  .form-register-restaurant.error-message-form {
     width: 230px;
     left: 25px;
     bottom: 130px;
