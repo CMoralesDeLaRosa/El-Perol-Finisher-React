@@ -7,7 +7,15 @@ const storage = (folder) =>
     cloudinary: cloudinary,
     params: {
       folder: `elperol/${folder}`,
-      allowedFormats: ['jpg', 'png', 'jpeg', 'gif', 'webp']
+      allowedFormats: ['jpg', 'png', 'jpeg', 'gif', 'webp'],
+      transformation: [
+        {
+          format: 'webp',
+          quality: 'auto',
+          width: 800,
+          crop: 'limit'
+        }
+      ]
     }
   })
 
