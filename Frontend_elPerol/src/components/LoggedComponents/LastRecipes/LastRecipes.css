@@ -1,9 +1,9 @@
 /*Section-last-recipes*/
 #section-last-recipes {
   width: 100%;
-  height: 610px;
+  height: 700px;
   gap: 40px;
-  padding: var(--ep-padding-xl) var(--ep-padding-section);
+  padding: var(--ep-padding-section) 340px;
 }
 #section-last-recipes h2 {
   align-self: self-start;
@@ -17,7 +17,7 @@
   letter-spacing: 2;
   line-height: 50px;
   text-align: start;
-  margin-bottom: 30px;
+  margin-bottom: var(--ep-margin-s);
 }
 .article-last-recipes {
   width: 100%;
