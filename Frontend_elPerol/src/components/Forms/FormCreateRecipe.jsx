@@ -61,9 +61,12 @@ const FormCreateRecipe = ({
     ''
   const firstErrorMessage = firstFrontendErrorMessage || error || ''
 
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false)
+
   const handleValidationAndSubmit = async () => {
     setIsSubmitting(true)
     setLoading(true)
+    setIsFormSubmitted(true)
 
     const validateIngredients = () => {
       if (Object.keys(formState.errors).length > 0) {
@@ -99,6 +102,7 @@ const FormCreateRecipe = ({
     try {
       await onSubmit(transformedData)
       reset()
+      setIsFormSubmitted(false)
     } catch (error) {
       console.error('Error al enviar la receta:', error)
     } finally {
@@ -120,11 +124,28 @@ const FormCreateRecipe = ({
       alert('No puedes añadir más de 10 ingredientes')
     }
   }
+
+  useEffect(() => {
+    if (isFormSubmitted) {
+      if (fields.length === 0) {
+        setErrorIngredientMessage('Hace falta al menos un ingrediente')
+        setErrorIngredient(true)
+      } else {
+        setErrorIngredientMessage('')
+        setErrorIngredient(false)
+      }
+    }
+  }, [fields.length, isFormSubmitted])
+
   const handleRemoveIngredient = (indexToRemove) => {
     remove(indexToRemove)
+
     if (fields.length === 0) {
       setErrorIngredientMessage('Hace falta al menos un ingrediente')
       setErrorIngredient(true)
+    } else {
+      setErrorIngredientMessage('')
+      setErrorIngredient(false)
     }
   }
 
@@ -149,17 +170,12 @@ const FormCreateRecipe = ({
           className='img-jar-left'
         />
       </div>
-
       <div className='div-form-inputs-create-recipe flex-container'>
         <div className='flex-container'>
           <label
             htmlFor='imgRecipe'
             className={`label-register-img-recipe ${
-              formState.errors.img
-                ? 'label-register-img-error-recipe'
-                : selectedImage?.length > 0
-                ? ''
-                : ''
+              formState.errors.img ? 'label-register-img-error-recipe' : ''
             }`}
           >
             <MdCameraAlt className='icon-camera-user' />

@@ -1,5 +1,5 @@
 import './CreateRecipe.css'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useUser } from '../../../context/userProvider'
 import { handleCreateRecipe } from '../../../utils/handleCreateRecipe'
 import FormCreateRecipe from '../../Forms/FormCreateRecipe'
@@ -30,13 +30,16 @@ const CreateRecipe = () => {
     }
   }
 
-  if (successMessage) {
-    setError('')
-  }
+  useEffect(() => {
+    if (successMessage) {
+      setError('')
+      const timer = setTimeout(() => {
+        setSuccessMessage('')
+      }, 10000)
 
-  setTimeout(() => {
-    setSuccessMessage('')
-  }, 10000)
+      return () => clearTimeout(timer)
+    }
+  }, [successMessage]) // Se ejecuta solo cuando `successMessage` cambia
 
   return (
     <section
